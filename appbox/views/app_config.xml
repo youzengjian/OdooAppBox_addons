@@ -1,0 +1,24 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="appbox.app_config_form">
+      <field name="name">app_config form</field>
+      <field name="model">app.config</field>
+      <field name="arch" type="xml">
+        <form string="Config">
+          <header>
+            <button string="立即更新授权" name="action_update_key" type="object" class="oe_highlight"/>
+            <button string="恢复默认配置" name="action_set_default" type="object" class="oe_highlight"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="url"/>
+              <field name="token"/>
+              <field name="key"/>
+              <field name="message"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

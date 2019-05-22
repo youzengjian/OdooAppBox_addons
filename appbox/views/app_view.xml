@@ -1,0 +1,46 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="appbox.app_view_list">
+      <field name="name">app_view list</field>
+      <field name="model">app.view</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="type"/>
+          <field name="res_model"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="appbox.app_view_form">
+      <field name="name">app_view form</field>
+      <field name="model">app.view</field>
+      <field name="arch" type="xml">
+        <form string="Menu">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="priority"/>
+              </group>
+              <group>
+                <field name="res_model"/>
+                <field name="inherit_id" domain="[('res_model', '=', res_model), ('type', '=', type), ('id', '!=', id)]"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="视图结构">
+                <field name="arch"/>
+                <field name="arch_original"/>
+              </page>
+              <page string="继承该视图的视图列表">
+                <field name="inherit_children_ids"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

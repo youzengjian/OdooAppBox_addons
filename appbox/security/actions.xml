@@ -1,0 +1,39 @@
+<openerp>
+  <data>
+    <record model="ir.actions.act_window" id="appbox.act_app_menu">
+      <field name="name">APP菜单配置</field>
+      <field name="res_model">app.menu</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="appbox.act_app_act_window">
+      <field name="name">APP窗口动作配置</field>
+      <field name="res_model">app.act_window</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="appbox.act_app_view">
+      <field name="name">APP视图配置</field>
+      <field name="res_model">app.view</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.server" id="appbox.act_app_config">
+      <field name="name">APP</field>
+        <field name="type">ir.actions.server</field>
+      <field name="model_id" ref="appbox.model_app_config"/>
+      <field name="state">code</field>
+      <field name="code">
+records = env['app.config'].search([])
+action = {
+    'type': 'ir.actions.act_window',
+    'res_id': records and records[0].id or None,
+    'res_model': 'app.config',
+    'target': 'current',
+    'views': [(env.ref('appbox.app_config_form').id, 'form')],
+}
+      </field>
+    </record>
+
+  </data>
+</openerp>

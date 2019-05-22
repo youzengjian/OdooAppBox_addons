@@ -1,0 +1,43 @@
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="appbox.app_menu_list">
+      <field name="name">app_menu list</field>
+      <field name="model">app.menu</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="sequence"/>
+          <field name="complete_name"/>
+          <field name="icon"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="appbox.app_menu_form">
+      <field name="name">app_menu form</field>
+      <field name="model">app.menu</field>
+      <field name="arch" type="xml">
+        <form string="Menu">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="parent_id" domain="[('action','=',False)]"/>
+                <field name="sequence"/>
+              </group>
+              <group>
+                <field name="complete_name"/>
+                <field name="action"/>
+                <field name="icon" attrs="{'invisible':[('parent_id','!=',False)]}"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="用户组">
+                <field name="groups_id"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

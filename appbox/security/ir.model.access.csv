@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_app_box_act_window,app_box.app_act_window,model_app_act_window,,1,0,0,0
+access_app_box_act_window,app_box.app_act_window,model_app_act_window,base.group_no_one,1,1,1,1
+access_app_box_app_menu,app_box.app_menu,model_app_menu,,1,0,0,0
+access_app_box_app_menu,app_box.app_menu,model_app_menu,base.group_no_one,1,1,1,1
+access_app_box_app_view,app_box.app_view,model_app_view,,1,0,0,0
+access_app_box_app_view,app_box.app_view,model_app_view,base.group_no_one,1,1,1,1
+access_app_box_app_config,app_box.app_config,model_app_config,,1,0,0,0
+access_app_box_app_config,app_box.app_config,model_app_config,base.group_no_one,1,1,1,1
