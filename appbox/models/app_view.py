@@ -31,7 +31,7 @@ class app_view(models.Model):
     def onchang_arch_original(self):
         if self.arch_original:
             # Ensure arch_original is valid xml content
-            etree.fromstring(self.arch_original.encode('utf-8'))
+            etree.fromstring(self.arch_original)
 
     @api.depends('arch_original')
     def _compute_arch(self):
@@ -62,8 +62,8 @@ class app_view(models.Model):
             node.getparent().remove(node)
 
         def compine_view_by_xpath(view_arch, xpath_arch):
-            view_arch_tree = etree.fromstring(view_arch.encode('utf-8'))
-            xpath_tree = etree.fromstring(xpath_arch.encode('utf-8'))
+            view_arch_tree = etree.fromstring(view_arch)
+            xpath_tree = etree.fromstring(xpath_arch)
             if xpath_tree.tag != 'data':
                 raise Exception('继承视图的根节点必须是data节点')
             for xpath_element in xpath_tree:
