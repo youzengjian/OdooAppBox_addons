@@ -29,4 +29,5 @@
         'data/app_view_hr_leave.xml',
         'data/app_action.xml',
     ],
+    'application': True,
 }

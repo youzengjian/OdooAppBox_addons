@@ -33,4 +33,5 @@
         'data/app_action.xml',
         'data/app_menu.xml',
     ],
+    'application': True,
 }
