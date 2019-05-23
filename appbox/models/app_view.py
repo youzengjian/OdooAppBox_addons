@@ -113,7 +113,6 @@ class app_view(models.Model):
             return etree.tostring(view_arch_tree, encoding='utf-8')
 
         def combine_view(view_arch, child_view, recursion):
-            print('combine:', child_view.name, ',', child_view.name)
             view_arch = compine_view_by_xpath(view_arch, child_view.arch_original)
             if not recursion:
                 return view_arch

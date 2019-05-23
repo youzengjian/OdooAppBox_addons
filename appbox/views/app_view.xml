@@ -31,7 +31,6 @@
             </group>
             <notebook>
               <page string="视图结构">
-                <field name="arch"/>
                 <field name="arch_original"/>
               </page>
               <page string="继承该视图的视图列表">
