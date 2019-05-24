@@ -1,0 +1,222 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 02:19+0000\n"
+"PO-Revision-Date: 2019-05-24 10:26+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Account"
+msgstr "会计"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Accounting Entries"
+msgstr "会计分录"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Accounting-related settings are managed on the parent company"
+msgstr "请在上级公司中管理会计相关设置"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Address"
+msgstr "地址"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Basic Infomation"
+msgstr "基础信息"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "City"
+msgstr "市"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Companies"
+msgstr "公司"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Company"
+msgstr "公司"
+
+#. module: appbox_base
+#: model:app.act_window,name:appbox_base.act_res_partner
+#: model:app.menu,name:appbox_base.menu_res_partner
+#: model:app.view,name:appbox_base.app_view_res_partner_form
+#: model:app.view,name:appbox_base.app_view_res_partner_kanban
+#: model:app.view,name:appbox_base.app_view_res_partner_search
+msgid "Contacts"
+msgstr "联系人"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Contacts & Addresses"
+msgstr "联系人&地址"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Country"
+msgstr "国家"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Customers"
+msgstr "客户"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Fiscal Information"
+msgstr "税科目调整"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Future Activities"
+msgstr "未来的活动"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Inactive"
+msgstr "已存档"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Individuals"
+msgstr "个人"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Internal note..."
+msgstr "内部备注..."
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Internal notes"
+msgstr "内部备注"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Late Activities"
+msgstr "已超时的活动"
+
+#. module: appbox_base
+#: model:app.menu,name:appbox_base.menu_basic_info_root
+msgid "Master Data"
+msgstr "主数据"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Misc"
+msgstr "杂项"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "My Activities"
+msgstr "我的活动"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "My Contacts"
+msgstr "我的业务伙伴"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Name"
+msgstr "名称"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Pricelists are managed on the parent company."
+msgstr "请在上级公司中管理价格表"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Purchase"
+msgstr "采购"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Sales"
+msgstr "销售"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Sales & Purchase"
+msgstr "销售&采购"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "State"
+msgstr "省"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Street..."
+msgstr "街道..."
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Street2..."
+msgstr "街道2..."
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Tags..."
+msgstr "标签..."
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Today Activities"
+msgstr "今天的活动"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Vendors"
+msgstr "供应商"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Warning on the Invoice"
+msgstr "发票上的警告"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "Warning on the Sales Order"
+msgstr "销售订单上的警告"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "ZIP"
+msgstr "邮编"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "e.g.BE0477472701"
+msgstr "例如：BE0477472701"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "e.g.Sales Director"
+msgstr "例如：销售总监"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+msgid "e.g.http://www.atknit.com"
+msgstr "例如：http://www.atknit.com"

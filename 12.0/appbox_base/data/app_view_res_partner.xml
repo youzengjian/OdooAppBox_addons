@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_base.app_view_res_partner_kanban">
-      <field name="name">联系人</field>
+      <field name="name">Contacts</field>
       <field name="res_model">res.partner</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -20,7 +20,7 @@
     </record>
 
     <record model="app.view" id="appbox_base.app_view_res_partner_form">
-      <field name="name">联系人</field>
+      <field name="name">Contacts</field>
       <field name="res_model">res.partner</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
@@ -35,38 +35,38 @@
             <field name="is_company" attrs="{'invisible': true}"/>
             <field name="commercial_partner_id" attrs="{'invisible': true}"/>
             <field name="company_type" class="edit_only"/>
-            <field name="name" placeholder="名称" attrs="{'required' : [('type', '=', 'contact')]}"/>
-            <field name="parent_id" string="上级公司" placeholder="公司" domain="[('is_company', '=', True)]"
+            <field name="name" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+            <field name="parent_id" placeholder="Company" domain="[('is_company', '=', True)]"
                    context="{'default_is_company': True, 'default_supplier': supplier, 'default_customer': customer}"
                    attrs="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}"/>
             <field name="company_name" attrs="{'invisible': ['|', '|', ('company_name', '=', False), ('company_name', '=', ''), ('is_company', '=', True)]}"/>
 
           </div>
           <div widget="tabs">
-            <div widget="tab" string="基础信息">
-              <field name="vat" string="税号" placeholder="例如：BE0477472701" attrs="{'readonly': [('parent_id','!=',False)]}"/>
-              <field name="category_id" sting="标签" placeholder="标签..." options="{'no_create': True}"/>
-              <field name="function" placeholder="例如：销售总监" attrs="{'invisible': [('is_company','=', True)]}"/>
+            <div widget="tab" string="Basic Infomation">
+              <field name="vat" placeholder="e.g.BE0477472701" attrs="{'readonly': [('parent_id','!=',False)]}"/>
+              <field name="category_id" sting="Tags" placeholder="Tags..." options="{'no_create': True}"/>
+              <field name="function" placeholder="e.g.Sales Director" attrs="{'invisible': [('is_company','=', True)]}"/>
               <field name="phone"/>
               <field name="mobile"/>
               <field name="user_ids" attrs="{'invisible': true}"/>
               <field name="email" context="{'gravatar_image': True}" attrs="{'required': [('user_ids','!=', [])]}"/>
-              <field name="website" placeholder="例如：www.odooappbox_base.com"/>
+              <field name="website" placeholder="e.g.http://www.atknit.com"/>
               <field name="title" options="{'no_open': True}" attrs="{'invisible': [('is_company', '=', True)]}"/>
               <field name="lang"/>
             </div>
 
-            <div widget="tab" string="地址">
+            <div widget="tab" string="Address">
               <field name="type" attrs="{'invisible': [('parent_id','=', False)]}" groups="sale.group_delivery_invoice_address"/>
-              <field name="country_id" placeholder="国家" options="{'no_open': true, 'no_create': true}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-              <field name="zip" placeholder="邮编" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-              <field name="state_id" placeholder="省" options="{'no_open': True, 'no_create': true}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
-              <field name="city" placeholder="市" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-              <field name="street" placeholder="街道..." attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
-              <field name="street2" placeholder="街道2..." attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+              <field name="country_id" placeholder="Country" options="{'no_open': true, 'no_create': true}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+              <field name="zip" placeholder="ZIP" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+              <field name="state_id" placeholder="State" options="{'no_open': True, 'no_create': true}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
+              <field name="city" placeholder="City" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+              <field name="street" placeholder="Street..." attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+              <field name="street2" placeholder="Street2..." attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
             </div>
 
-            <div widget="tab" string="联系人&amp;地址">
+            <div widget="tab" string="Contacts &amp; Addresses">
               <field name="child_ids" groups="sale.group_delivery_invoice_address"
                      context="{'default_street': street, 'default_street2': street2,
                      'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 
@@ -90,24 +90,24 @@
                   <div attrs="{'invisible': [('type','=', 'contact')]}">
                     <div class="separator"> </div>
                     <div class="section">
-                      <field name="country_id" placeholder="国家" options="{'no_open': True, 'no_create': True}"/>
-                      <field name="zip" placeholder="邮编"/>
-                      <field name="state_id" placeholder="省" options="{'no_open': True}" context="{'country_id': country_id, 'zip': zip}"/>
-                      <field name="city" placeholder="市"/>
-                      <field name="street" placeholder="街道..."/>
-                      <field name="street2" placeholder="街道2..."/>
+                      <field name="country_id" placeholder="Country" options="{'no_open': True, 'no_create': True}"/>
+                      <field name="zip" placeholder="ZIP"/>
+                      <field name="state_id" placeholder="State" options="{'no_open': True}" context="{'country_id': country_id, 'zip': zip}"/>
+                      <field name="city" placeholder="City"/>
+                      <field name="street" placeholder="Street..."/>
+                      <field name="street2" placeholder="Street2..."/>
                     </div>
                   </div>
 
                   <div class="separator"> </div>
                   <div class="section">
-                    <field name="name" string="联系人姓名" attrs="{'required' : [('type', '=', 'contact')]}"/>
-                    <field name="title" placeholder="例如：先生" attrs="{'invisible': [('type','!=', 'contact')]}"/>
-                    <field name="function" placeholder="例如：销售总监" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                    <field name="name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                    <field name="title" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+                    <field name="function" placeholder="e.g.Sales Director" attrs="{'invisible': [('type','!=', 'contact')]}"/>
                     <field name="email"/>
                     <field name="phone"/>
                     <field name="mobile"/>
-                    <field name="comment" placeholder="内部备注"/>
+                    <field name="comment" placeholder="Internal note..."/>
                   </div>
                   <field name="supplier" attrs="{'invisible': true}"/>
                   <field name="customer" attrs="{'invisible': true}"/>
@@ -117,57 +117,57 @@
               </field>
             </div>
             
-            <div widget="tab" string="内部备注">
-              <field name="comment" placeholder="内部备注..."/>
+            <div widget="tab" string="Internal notes">
+              <field name="comment" placeholder="Internal note..."/>
               <div groups="account.group_warning_account">
-                <div class="separator-text" style="font-weight:bold;">发票上的警告</div>
-                <field name="invoice_warn" string="警告选项"/>
-                <field name="invoice_warn_msg" string="警告信息" attrs="{'required':[('invoice_warn','!=','no-message')],'readonly':[('invoice_warn','=','no-message')], 'invisible':[('invoice_warn','=','no-message')]}"/>
+                <div class="separator-text" style="font-weight:bold;">Warning on the Invoice</div>
+                <field name="invoice_warn"/>
+                <field name="invoice_warn_msg" attrs="{'required':[('invoice_warn','!=','no-message')],'readonly':[('invoice_warn','=','no-message')], 'invisible':[('invoice_warn','=','no-message')]}"/>
               </div>
               <div groups="sale.group_warning_sale">
-                <div class="separator-text" style="font-weight:bold;">销售订单上的警告</div>
-                <field name="sale_warn" string="警告选项"/>
-                <field name="sale_warn_msg" string="警告信息" attrs="{'required':[('sale_warn','!=','no-message')],'readonly':[('sale_warn','=','no-message')], 'invisible':[('sale_warn','=','no-message')]}"/>
+                <div class="separator-text" style="font-weight:bold;">Warning on the Sales Order</div>
+                <field name="sale_warn"/>
+                <field name="sale_warn_msg" attrs="{'required':[('sale_warn','!=','no-message')],'readonly':[('sale_warn','=','no-message')], 'invisible':[('sale_warn','=','no-message')]}"/>
               </div>
             </div>
             
-            <div widget="tab" string="销售与采购">
-              <div class="separator-text" style="font-weight: bold;">销售：</div>
+            <div widget="tab" string="Sales &amp; Purchase">
+              <div class="separator-text" style="font-weight: bold;">Sales</div>
               <field name="customer"/>
               <field name="user_id" options="{'no_open': true, 'no_create': true}"/>
-              <field name="opt_out" string="邮件退订" groups="base.group_no_one"/>
+              <field name="opt_out" groups="base.group_no_one"/>
               <field name="message_bounce" groups="base.group_no_one"/>
               <div groups="product.group_sale_pricelist">
                 <field name="property_product_pricelist" attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}"/>
                 <div attrs="{'invisible': ['|',('is_company','=',True),('parent_id','=',False)]}">
-                    请在上级公司中管理价格表
+                    Pricelists are managed on the parent company.
                 </div>
               </div>
-              <div class="separator-text" style="font-weight: bold;">采购：</div>
+              <div class="separator-text" style="font-weight: bold;">Purchase</div>
               <field name="supplier"/>
-              <div class="separator-text" style="font-weight: bold;">杂项：</div>
+              <div class="separator-text" style="font-weight: bold;">Misc</div>
               <field name="ref"/>
               <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
               <field name="industry_id" attrs="{'invisible': [('is_company', '=', False)]}" options="{'no_open': true, 'no_create': true}"/>
             </div>
-            <div widget="tab" string="会计" groups="account.group_account_invoice">
+            <div widget="tab" string="Account" groups="account.group_account_invoice">
               <div attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}">
-                <div class="separator-text" style="font-weight: bold;">销售：</div>
+                <div class="separator-text" style="font-weight: bold;">Sales</div>
                 <field name="property_payment_term_id" options="{'no_open': true, 'no_create': true}"/>
                 <field name="trust" groups="base.group_no_one"/>
-                <div class="separator-text" style="font-weight: bold;">采购：</div>
+                <div class="separator-text" style="font-weight: bold;">Purchase</div>
                 <field name="property_supplier_payment_term_id" options="{'no_open': true, 'no_create': true}"/>
                 <field name="currency_id" attrs="{'invisible': True}"/>
-                <div class="separator-text" style="font-weight: bold;">财政信息：</div>
+                <div class="separator-text" style="font-weight: bold;">Fiscal Information</div>
                 <field name="property_account_position_id" options="{'no_create': True, 'no_open': True}"/>
                 <div groups="account.group_account_user">
-                  <div class="separator-text" style="font-weight: bold;">会计分录：</div>
+                  <div class="separator-text" style="font-weight: bold;">Accounting Entries</div>
                   <field name="property_account_receivable_id" options="{'no_open': true, 'no_create': true}"/>
                   <field name="property_account_payable_id" options="{'no_open': true, 'no_create': true}"/>
                 </div>
               </div>
               <div attrs="{'invisible': ['|',('is_company','=',True),('parent_id','=',False)]}">
-                <div style="margin: 1.0rem 0;">请在上级公司中管理会计相关设置</div>
+                <div style="margin: 1.0rem 0;">Accounting-related settings are managed on the parent company</div>
               </div>
             </div>
           </div>
@@ -176,36 +176,36 @@
     </record>
 
     <record model="app.view" id="appbox_base.app_view_res_partner_search">
-      <field name="name">联系人</field>
+      <field name="name">Contacts</field>
       <field name="res_model">res.partner</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" string="名称" domain="['|','|',('name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
-          <field name="category_id" string="标签" domain="[('category_id','ilike', self)]"/>
-          <field name="user_id" string="销售员" domain="[('user_id','ilike', self)]"/>
-          <field name="parent_id" string="关联公司" domain="[('parent_id','ilike', self)]"/>
+          <field name="name" domain="['|','|',('name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+          <field name="category_id" domain="[('category_id','ilike', self)]"/>
+          <field name="user_id" domain="[('user_id','ilike', self)]"/>
+          <field name="parent_id" domain="[('parent_id','ilike', self)]"/>
           <filter_group>
-            <filter string="我的业务伙伴" name="filter_my_partners" domain="[('user_id','=',uid)]"/>
+            <filter string="My Contacts" name="filter_my_partners" domain="[('user_id','=',uid)]"/>
           </filter_group>
           <filter_group>
-            <filter string="个人" name="type_person" domain="[('is_company','=',0)]"/>
-            <filter string="公司" name="type_company" domain="[('is_company','=',1)]"/>
+            <filter string="Individuals" name="type_person" domain="[('is_company','=',0)]"/>
+            <filter string="Companies" name="type_company" domain="[('is_company','=',1)]"/>
           </filter_group>
           <filter_group>
-            <filter string="客户" name="customer" domain="[('customer','=',1)]"/>
-            <filter string="供应商" name="supplier" domain="[('supplier','=',1)]"/>
+            <filter string="Customers" name="customer" domain="[('customer','=',1)]"/>
+            <filter string="Vendors" name="supplier" domain="[('supplier','=',1)]"/>
           </filter_group>
           <filter_group>
-            <filter string="我的活动" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
+            <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
           </filter_group>
           <filter_group>
-            <filter string="已超时的活动" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
-            <filter string="今天的活动" name="activities_today" domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
-            <filter string="未来的活动" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter string="Late Activities" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter string="Today Activities" name="activities_today" domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter string="Future Activities" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
           </filter_group>
           <filter_group>
-            <filter string="已存档" name="inactive" domain="[('active','=',False)]"/>
+            <filter string="Inactive" name="inactive" domain="[('active','=',False)]"/>
           </filter_group>
         </search>
       </field>
