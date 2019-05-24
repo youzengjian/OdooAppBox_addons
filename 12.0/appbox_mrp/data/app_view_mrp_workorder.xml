@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_mrp.app_view_mrp_workorder_kanban">
-      <field name="name">工单</field>
+      <field name="name">Work Order</field>
       <field name="res_model">mrp.workorder</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -17,12 +17,12 @@
     </record>
 
     <record model="app.view" id="appbox_mrp.app_view_mrp_workorder_form">
-      <field name="name">工单</field>
+      <field name="name">Work Order</field>
       <field name="res_model">mrp.workorder</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
         <form>
-          <div class="separator">基础信息：</div>
+          <div class="separator">Basic Information</div>
           <div class="section">
             <field name="state" attrs="{'invisible': true}"/>
             <field name="is_produced" attrs="{'invisible': true}"/>
@@ -34,14 +34,14 @@
             <field name="workcenter_id" attrs="{'invisible': true}"/>
             <field name="product_tracking" attrs="{'invisible': true}"/>
             <field name="move_raw_ids" attrs="{'invisible': true}"/>
-            <field name="name" string="单号"/>
+            <field name="name"/>
             <field name="product_id"/>
             <field name="qty_producing"/>
             <field name="final_lot_id" attrs="{'invisible': [('product_tracking', '=', 'none')]}"/>
           </div>
-          <div class="separator">投料明细：</div>
+          <div class="separator">Move Lines</div>
           <div class="section">
-            <field name="active_move_line_ids" widget="workorder_by_scan" label="作业" placeholder="明细行为空"
+            <field name="active_move_line_ids" widget="workorder_by_scan" label="Operation" placeholder="No Data"
                    attrs="{'readonly': [('state', '=', 'done')], 'enbale_picking_scanner': true}"
                    group_fields="location_id,location_dest_id">
               <kanban style="display: flex; justify-content: space-between; align-items: center; flex-flow: wrap;">
@@ -80,16 +80,16 @@
             </field>
           </div>
           <footer>
-            <button name="button_finish" type="object" string="完成工单" attrs="{'invisible': ['|', ('state', '!=', 'progress'), ('is_produced', '=', False)]}"/>
-            <button name="button_start" type="object" string="开始工作" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'pending')]}"/>
-            <button name="button_start" type="object" string="开始工作" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'ready')]}"/>
-            <button name="record_production" type="object" string="完成" attrs="{'invisible': ['|', '|', '|', ('is_produced', '=', True), ('working_state', '=', 'blocked'), ('state', '!=', 'progress'), ('is_user_working', '=', False)]}"/>
-            <button name="button_pending" type="object" string="暂停" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
-            <button name="200" type="action" context="{'default_workcenter_id': workcenter_id}" string="阻塞" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
-            <button name="button_unblock" type="object" string="解除阻塞" attrs="{'invisible': [('working_state', '!=', 'blocked')]}"/>
-            <button name="button_start" type="object" string="继续生产" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('is_user_working', '=', True), ('state', 'in', ('done', 'pending', 'ready', 'cancel'))]}"/>
-            <button name="button_start" type="object" string="继续生产" attrs="{'invisible': ['|', '|', ('production_state', '=', 'done'), ('working_state', '=', 'blocked'), ('state', '!=', 'done')]}"/>
-            <button name="button_scrap" type="object" string="报废" attrs="{'invisible': [('state', 'in', ('confirmed', 'cancel'))]}"/>
+            <button name="button_finish" type="object" string="Finish Order" attrs="{'invisible': ['|', ('state', '!=', 'progress'), ('is_produced', '=', False)]}"/>
+            <button name="button_start" type="object" string="Start Working" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'pending')]}"/>
+            <button name="button_start" type="object" string="Start Working" attrs="{'invisible': ['|', ('working_state', '=', 'blocked'), ('state', '!=', 'ready')]}"/>
+            <button name="record_production" type="object" string="Done" attrs="{'invisible': ['|', '|', '|', ('is_produced', '=', True), ('working_state', '=', 'blocked'), ('state', '!=', 'progress'), ('is_user_working', '=', False)]}"/>
+            <button name="button_pending" type="object" string="Pause" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
+            <button name="200" type="action" context="{'default_workcenter_id': workcenter_id}" string="Block" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('state', 'in', ('done', 'pending', 'ready', 'cancel')), ('is_user_working', '=', False)]}"/>
+            <button name="button_unblock" type="object" string="Unblock" attrs="{'invisible': [('working_state', '!=', 'blocked')]}"/>
+            <button name="button_start" type="object" string="Continue Production" attrs="{'invisible': ['|', '|', ('working_state', '=', 'blocked'), ('is_user_working', '=', True), ('state', 'in', ('done', 'pending', 'ready', 'cancel'))]}"/>
+            <button name="button_start" type="object" string="Continue Production" attrs="{'invisible': ['|', '|', ('production_state', '=', 'done'), ('working_state', '=', 'blocked'), ('state', '!=', 'done')]}"/>
+            <button name="button_scrap" type="object" string="Scrap" attrs="{'invisible': [('state', 'in', ('confirmed', 'cancel'))]}"/>
           </footer>
         </form>
       </field>

@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.act_window" id="appbox_mrp.act_mrp_workorder">
-      <field name="name">扫码报工</field>
+      <field name="name">Work Order</field>
       <field name="res_model">mrp.workorder</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
