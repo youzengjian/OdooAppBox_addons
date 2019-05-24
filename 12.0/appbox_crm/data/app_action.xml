@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.act_window" id="appbox_crm.act_opportunity_assigned_to_me">
-      <field name="name">商机</field>
+      <field name="name">Leads</field>
       <field name="res_model">crm.lead</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
@@ -13,7 +13,7 @@
     </record>
 
     <record model="app.act_window" id="appbox_crm.act_opportunity">
-      <field name="name">商机</field>
+      <field name="name">Leads</field>
       <field name="res_model">crm.lead</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>

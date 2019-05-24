@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_crm.app_view_crm_lead_kanban">
-      <field name="name">商机</field>
+      <field name="name">Leads</field>
       <field name="res_model">crm.lead</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -11,26 +11,26 @@
             <div style="display:flex; align-items: center;justify-content: space-between;">
               <field name="probability" style="flex: 1 1 auto;" attrs="{'nolabel': false}"/><div class="field-text" style="margin-left: 0.5rem;">%</div>
             </div>
-          <field name="partner_id" string="客户" attrs="{'nolabel': false}"/>
+          <field name="partner_id" attrs="{'nolabel': false}"/>
         </kanban>
       </field>
     </record>
 
     <record model="app.view" id="appbox_crm.app_view_crm_lead_form">
-      <field name="name">商机</field>
+      <field name="name">Leads</field>
       <field name="res_model">crm.lead</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
         <form>
           <div class="section">
-            <field name="name" placeholder="例如：产品定价" style="font-weight:bold;"/>
+            <field name="name" placeholder="Describe the lead..." style="font-weight:bold;"/>
             <field name="company_currency" attrs="{'invisible': True}"/>
             <field name="planned_revenue" widget="monetary" options="{'currency_field': 'company_currency'}"/>
             <div style="display:flex; align-items: center;justify-content: space-between;">
               <field name="probability" style="flex: 1 1 auto;"/><div class="field-text" style="margin-left: 0.5rem;">%</div>
             </div>
 
-            <field name="partner_id" string="客户" domain="[('customer', '=', True)]" 
+            <field name="partner_id" domain="[('customer', '=', True)]"
                   context="{'search_default_customer': 1, 'default_name': partner_name, 
                             'default_street': street, 'default_street2': street2, 
                             'default_city': city, 'default_state_id': state_id, 
@@ -39,7 +39,7 @@
                             'default_mobile': mobile, 'default_email': email_from, 
                             'default_user_id': user_id, 'default_team_id': team_id, 
                             'default_website': website}"/>
-            <field name="email_from" string="邮箱" widget="email"/>
+            <field name="email_from" widget="email"/>
             <field name="phone"/>
             <field name="date_deadline"/>
             <field name="user_id" domain="[('share', '=', False)]" context="{'default_groups_ref': ['base.group_user', 
@@ -51,28 +51,28 @@
             <field name="date_conversion" invisible="1"/>
           </div>
           <div widget="tabs">
-            <div widget="tab" string="内部备注">
+            <div widget="tab" string="Internal Notes">
               <field name="description"/>
             </div>
-            <div widget="tab" string="联系信息">
+            <div widget="tab" string="Extra Info">
               <field name="partner_name"/>
-              <field name="country_id" placeholder="国家" options="{'no_open': True, 'no_create': True}"/>
-              <field name="zip" placeholder="邮编"/>
-              <field name="state_id" placeholder="省" options="{'no_open': True, 'no_create': True}"/>
-              <field name="city" placeholder="市"/>
-              <field name="street" placeholder="街道.."/>
-              <field name="street2" placeholder="街道2.."/>
-              <field name="website" placeholder="例如：www.odooappbox.com"/>
+              <field name="country_id" placeholder="Country" options="{'no_open': True, 'no_create': True}"/>
+              <field name="zip" placeholder="ZIP"/>
+              <field name="state_id" placeholder="State" options="{'no_open': True, 'no_create': True}"/>
+              <field name="city" placeholder="City"/>
+              <field name="street" placeholder="Street.."/>
+              <field name="street2" placeholder="Street2.."/>
+              <field name="website" placeholder="e.g.http://www.atknit.com"/>
               <field name="contact_name"/>
-              <field name="title" placeholder="称谓" domain="[]" options="{'no_open': True, 'no_create': True}"/>
+              <field name="title" placeholder="Title" domain="[]" options="{'no_open': True, 'no_create': True}"/>
               <field name="function"/>
               <field name="mobile"/>
               <field name="opt_out"/>
-              <div class="separator-text" style="font-weight:bold;">市场</div>
+              <div class="separator-text" style="font-weight:bold;">Tracking</div>
               <field name="campaign_id" options="{'no_open': True, 'no_create': True}"/>
               <field name="medium_id" options="{'no_open': True, 'no_create': True}"/>
               <field name="source_id" options="{'no_open': True, 'no_create': True}"/>
-              <div class="separator-text" style="font-weight:bold;">杂项</div>
+              <div class="separator-text" style="font-weight:bold;">Analysis</div>
               <field name="day_open" groups="base.group_no_one"/>
               <field name="day_close" groups="base.group_no_one"/>
               <field name="referred"/>
@@ -84,13 +84,13 @@
     </record>
     
     <record model="app.view" id="appbox_crm.app_view_crm_lead_search">
-      <field name="name">商机</field>
+      <field name="name">Leads</field>
       <field name="res_model">crm.lead</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" string="名称" domain="[('name','ilike',self)]"/>
-          <field name="partner_id" string="客户" domain="[('partner_id','ilike', self)]"/>
+          <field name="name" string="Name" domain="[('name','ilike',self)]"/>
+          <field name="partner_id" string="Partner" domain="[('partner_id','ilike', self)]"/>
         </search>
       </field>
     </record>
