@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_hr_holidays.app_view_hr_employee_inherit_hr_employee_form">
-      <field name="name">员工</field>
+      <field name="name">Employees</field>
       <field name="res_model">hr.employee</field>
       <field name="type">form</field>
       <field name="inherit_id" ref="appbox_hr.app_view_hr_employee_form"/>
@@ -13,13 +13,13 @@
             <button name="appbox_hr_holidays.act_open_hr_leave" type="action" icon="fa-calendar"
                     attrs="{'invisible': [('show_leaves','=', False)]}"
                     widget="statinfo" groups="base.group_user">
-              <field string="剩余休假" name="leaves_count" class="value-left"/>
+              <field string="Leaves Left" name="leaves_count" class="value-left"/>
             </button>
           </xpath>
           <xpath expr="//field[@name='user_id']" position="after">
-            <div class="separator-text" style="font-weight:bold;">休假</div>
+            <div class="separator-text" style="font-weight:bold;">Leaves</div>
             <div style="display:flex; align-items: center;justify-content: space-between;">
-              <field name="remaining_leaves" style="flex: 1 1 auto;"/><div class="field-text" style="margin-left:0.5rem;">天</div>
+              <field name="remaining_leaves" style="flex: 1 1 auto;"/><div class="field-text" style="margin-left:0.5rem;">days</div>
             </div>
           </xpath>
         </data>

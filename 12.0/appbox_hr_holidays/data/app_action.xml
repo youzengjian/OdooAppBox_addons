@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.act_window" id="appbox_hr_holidays.act_open_hr_leave">
-      <field name="name">休假</field>
+      <field name="name">Leaves</field>
       <field name="res_model">hr.leave</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>

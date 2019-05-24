@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_kanban">
-      <field name="name">休假</field>
+      <field name="name">Leaves</field>
       <field name="res_model">hr.leave</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -15,7 +15,7 @@
     </record>
 
     <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_form">
-      <field name="name">休假</field>
+      <field name="name">Leaves</field>
       <field name="res_model">hr.leave</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
@@ -26,21 +26,21 @@
             <field name="holiday_status_id"/>
             <field name="name"/>
             <field name="number_of_days_display"/>
-            <field name="request_date_from" string="开始时间"/>
-            <field name="request_date_to" string="结束时间"/>
+            <field name="request_date_from"/>
+            <field name="request_date_to"/>
           </div>
         </form>
       </field>
     </record>
     
     <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_search">
-      <field name="name">休假</field>
+      <field name="name">Leaves</field>
       <field name="res_model">hr.leave</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" string="名称" domain="[('name','ilike',self)]"/>
-          <field name="employee_id" string="员工" domain="[('employee_id', 'ilike', self)]"/>
+          <field name="name" string="Name" domain="[('name','ilike',self)]"/>
+          <field name="employee_id" string="Employee" domain="[('employee_id', 'ilike', self)]"/>
         </search>
       </field>
     </record>
