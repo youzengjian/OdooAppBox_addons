@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 try:
-    from odoo import models, api
+    from odoo import models, api, _
 except:
     from openerp import models, api
 
@@ -10,7 +10,7 @@ class sale_order(models.Model):
     @api.multi
     def app_action_view_invoices(self):
         result = {
-            'name': '查看发票',
+            'name': _('Invoices'),
             'type': 'app.act_window',
             'res_model': 'account.invoice',
             'target': 'self',

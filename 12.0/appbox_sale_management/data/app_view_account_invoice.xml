@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_sale_management.app_view_account_invoice_kanban">
-      <field name="name">发票</field>
+      <field name="name">Invoices</field>
       <field name="res_model">account.invoice</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -15,18 +15,18 @@
     </record>
 
     <record model="app.view" id="appbox_sale_management.app_view_account_invoice_form">
-      <field name="name">发票</field>
+      <field name="name">Invoices</field>
       <field name="res_model">account.invoice</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
         <form>
-          <div class="separator">基础信息：</div>
+          <div class="separator">Basic Information</div>
           <div class="section">
             <field name="number" attrs="{'readonly': true}"/>
             <field name="type" attrs="{'invisible':true}"/>
             <field name="journal_id" attrs="{'invisible':true}"/>
             <field name="state"/>
-            <field name="partner_id" string="客户" domain="[('customer','=',True)]"/>
+            <field name="partner_id" domain="[('customer','=',True)]"/>
             <field name="fiscal_position" options="{'no_open': true, 'no_create': true}"/>
             <field name="date_invoice"/>
             <field domain="[('company_id', '=', company_id),('type','=', 'receivable')]" name="account_id" groups="account.group_account_user" context="{'periods_special': False, 'all_fiscalyear': True}"/>
@@ -35,7 +35,7 @@
             </div>
             <field name="sent" invisible="1"/>
           </div>
-          <div class="separator">发票明细：</div>
+          <div class="separator">Invoice Lines</div>
           <div class="section">
             <field name="invoice_line_ids" widget="one2many_list" context="{'type': type, 'journal_id': journal_id}"
                   attrs="{'readonly': [('state', '!=', 'draft')]}">
@@ -59,24 +59,24 @@
               </form>
             </field>
           </div>
-          <div class="separator">税费明细：</div>
+          <div class="separator">Tax Lines</div>
           <div class="section">
             <field name="tax_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
               <kanban>
-                <field name="name" string="纳税说明" attrs="{'nolabel': false}"/>
-                <field name="base" string="应纳税金额" attrs="{'nolabel': false}"/>
-                <field name="amount_total" string="税费" attrs="{'nolabel': false}"/>
+                <field name="name" attrs="{'nolabel': false}"/>
+                <field name="base" attrs="{'nolabel': false}"/>
+                <field name="amount_total" attrs="{'nolabel': false}"/>
               </kanban>
               <form>
                 <div class="section">
-                  <field name="name" string="纳税说明" attrs="{'readonly': true}"/>
-                  <field name="base" string="应纳税金额" attrs="{'readonly': true}"/>
-                  <field name="amount_total" string="税费" attrs="{'readonly': true}"/>
+                  <field name="name" attrs="{'readonly': true}"/>
+                  <field name="base" attrs="{'readonly': true}"/>
+                  <field name="amount_total" attrs="{'readonly': true}"/>
                 </div>
               </form>
             </field>
           </div>
-          <div class="separator">合计：</div>
+          <div class="separator">Amount</div>
           <div class="section">
             <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
             <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
@@ -87,33 +87,32 @@
     </record>
 
     <record model="app.view" id="appbox_sale_management.app_view_account_invoice_search">
-      <field name="name">发票</field>
+      <field name="name">Invoices</field>
       <field name="res_model">account.invoice</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="number" string="发票" domain="['|','|','|', ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]"/>
-          <field name="journal_id" string="日记账" domain="[('journal_id','ilike',self)]"/>
-          <field name="partner_id" string="合作伙伴" domain="[('partner_id','ilike',self)]"/>
-          <field name="user_id" string="销售员" domain="[('user_id','ilike', self)]"/>
-          <field name="team_id" string="销售团队" domain="[('team_id','ilike', self)]"/>
-          <field name="date" string="期间" domain="[('date','=', self)]"/>
+          <field name="number" string="Invoice" domain="['|','|','|', ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+          <field name="partner_id" string="Partner" domain="[('partner_id','ilike',self)]"/>
+          <field name="user_id" string="Salesperson" domain="[('user_id','ilike', self)]"/>
+          <field name="team_id" string="Sales Team" domain="[('team_id','ilike', self)]"/>
+          <field name="date" string="Period" domain="[('date','=', self)]"/>
           <filter_group>
-            <filter name="draft" string="草稿" domain="[('state','=','draft')]"/>
-            <filter name="unpaid" string="开启" domain="[('state', '=', 'open')]"/>
-            <filter name="paid" string="已付款" domain="[('state', '=', 'paid')]"/>
-            <filter name="late" string="已逾期" domain="['&amp;', ('date_due', '&lt;', time.strftime('%Y-%m-%d')), ('state', '=', 'open')]"/>
+            <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+            <filter name="unpaid" string="Open" domain="[('state', '=', 'open')]"/>
+            <filter name="paid" string="Paid" domain="[('state', '=', 'paid')]"/>
+            <filter name="late" string="Overdue" domain="['&amp;', ('date_due', '&lt;', time.strftime('%Y-%m-%d')), ('state', '=', 'open')]"/>
           </filter_group>
           <filter_group>
-            <filter domain="[('user_id','=',uid)]" help="My Invoices"/>
+            <filter domain="[('user_id','=',uid)]" name="myinvoices" string="My Invoices"/>
           </filter_group>
           <filter_group>
             <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
           </filter_group>
           <filter_group>
-            <filter string="Late Activities" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]" help="Show all records which has next action date is before today"/>
+            <filter string="Late Activities" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
             <filter string="Today Activities" name="activities_today" domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
-            <filter string="Future Activities" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))                         ]"/>
+            <filter string="Future Activities" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
           </filter_group>
         </search>
       </field>

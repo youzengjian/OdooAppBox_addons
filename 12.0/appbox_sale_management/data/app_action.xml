@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.act_window" id="appbox_sale_management.act_sale_order_quotation">
-      <field name="name">报价单</field>
+      <field name="name">Quotations</field>
       <field name="res_model">sale.order</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
@@ -13,7 +13,7 @@
     </record>
 
     <record model="app.act_window" id="appbox_sale_management.act_sale_order">
-      <field name="name">销售订单</field>
+      <field name="name">Orders</field>
       <field name="res_model">sale.order</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
@@ -25,7 +25,7 @@
     </record>
 
     <record model="app.act_window" id="appbox_sale_management.act_open_partner_quotation_and_sale_order">
-      <field name="name">报价单及销售</field>
+      <field name="name">Quotations and Orders</field>
       <field name="res_model">sale.order</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
@@ -37,7 +37,7 @@
     </record>
 
     <record model="app.act_window" id="appbox_sale_management.act_sale_advance_payment_inv">
-      <field name="name">创建发票</field>
+      <field name="name">Create Invoices</field>
       <field name="res_model">sale.advance.payment.inv</field>
       <field name="target">new</field>
       <field name="view_mode">form</field>
