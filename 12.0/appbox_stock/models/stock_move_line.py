@@ -12,8 +12,8 @@ except:
 class StockMoveLine(models.Model):
     _inherit = "stock.move.line"
 
-    qty_need_scan = fields.Float(string="初始需求", compute='_compute_qty_need_scan', digits=(16, 0))
-    qty_scanned = fields.Float(string="已完成", default=0.0, digits=(16, 0))
+    qty_need_scan = fields.Float(string="Reserved", compute='_compute_qty_need_scan', digits=(16, 0))
+    qty_scanned = fields.Float(string="Done", default=0.0, digits=(16, 0))
 
     @api.depends('qty_done', 'product_uom_qty', 'picking_id')
     def _compute_qty_need_scan(self):

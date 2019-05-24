@@ -9,12 +9,12 @@
           <field name="id" attrs="{'invisible': true}"/>
           <div class="section" style="display:flex; justify-content: center; align-items: center; min-height: 100px;">
             <div style="font-weight: bold; font-size: 2rem;">
-              你还没有输入完成数量，点击确认系统将处理所有已保留数量做为完成数量。
+              You have not recorded done quantities yet, by clicking on apply. Odoo will process all the reserved quantities.
             </div>
           </div>
           <footer>
-            <button name="process" barcode="BTN_CONFIRM" string="确认" type="object" bgcolor="#23d18b"/>
-            <button type="cancel" barcode="BTN_CANCEL" string="取消" bgcolor="#ff3b2f"/>
+            <button name="process" barcode="BTN_CONFIRM" string="Confirm" type="object" bgcolor="#23d18b"/>
+            <button type="cancel" barcode="BTN_CANCEL" string="Cancel" bgcolor="#ff3b2f"/>
           </footer>
         </form>
       </field>

@@ -24,7 +24,7 @@ class StockPicking(models.Model):
                 ret['view_id'] = self.env.ref('appbox_stock.app_view_overprocessed_transfer').id
             elif (ret.get('view_id') == self.env.ref('stock.view_backorder_confirmation').id):
                 ret['type'] = 'app.act_window'
-                ret['view_id'] = self.env.ref('appbox_stock.view_backorder_confirmation').id
+                ret['view_id'] = self.env.ref('appbox_stock.app_view_backorder_confirmation').id
         else:
             pass
         return ret

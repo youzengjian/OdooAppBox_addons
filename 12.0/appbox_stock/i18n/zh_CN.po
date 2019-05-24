@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 16:31+0000\n"
+"PO-Revision-Date: 2019-05-25 00:32+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_overprocessed_transfer
+msgid "Are you sure you want to validate this picking?"
+msgstr "您确认要验证这个选择吗？"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Backorders"
+msgstr "欠单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Basic Information"
+msgstr "基础信息"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_backorder_confirmation
+#: model_terms:app.view,arch_original:appbox_stock.app_view_immediate_transfer
+#: model_terms:app.view,arch_original:appbox_stock.app_view_overprocessed_transfer
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Cancelled"
+msgstr "已取消"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Check Availability"
+msgstr "检查可用"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_immediate_transfer
+#: model_terms:app.view,arch_original:appbox_stock.app_view_overprocessed_transfer
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Confirm"
+msgstr "确认"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_backorder_confirmation
+msgid "Create Backorder"
+msgstr "创建欠单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_backorder_confirmation
+msgid "Create a backorder if you expect to process the remaining products later. Do not create a backorder if you will not process the remaining products."
+msgstr "如果你后续要处理余下的数量，则需要建立一个欠单。如果后续不用再处理，则不用建立欠单。"
+
+#. module: appbox_stock
+#: model:app.act_window,name:appbox_stock.act_stock_picking_outgoing
+#: model:app.menu,name:appbox_stock.menu_stock_picking_outgoing
+msgid "Delivery Orders"
+msgstr "出库单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+#: model:ir.model.fields,field_description:appbox_stock.field_stock_move_line__qty_scanned
+msgid "Done"
+msgstr "已完成"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Draft"
+msgstr "草稿"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Future Activities"
+msgstr "未来的活动"
+
+#. module: appbox_stock
+#: model:app.act_window,name:appbox_stock.act_stock_picking_internal
+#: model:app.menu,name:appbox_stock.menu_stock_picking_internal
+msgid "Internal"
+msgstr "内部调拨"
+
+#. module: appbox_stock
+#: model:app.menu,name:appbox_stock.menu_warehouse_root
+msgid "Inventory"
+msgstr "库存管理"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Late"
+msgstr "迟到"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Late Activities"
+msgstr "逾期活动"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Move Lines"
+msgstr "操作明细"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "My Activities"
+msgstr "我的活动"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_backorder_confirmation
+msgid "No Backorder"
+msgstr "没有欠单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "No Data"
+msgstr "没有数据"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Picking"
+msgstr "分拣单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Picking Type"
+msgstr "分拣类型"
+
+#. module: appbox_stock
+#: model:app.view,name:appbox_stock.app_view_stock_picking_form
+#: model:app.view,name:appbox_stock.app_view_stock_picking_kanban
+#: model:app.view,name:appbox_stock.app_view_stock_picking_search
+msgid "Pickings"
+msgstr "分拣单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Procurement Group"
+msgstr "补货组"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Product"
+msgstr "产品"
+
+#. module: appbox_stock
+#: model:ir.model,name:appbox_stock.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "产品操作明细"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Ready"
+msgstr "就绪"
+
+#. module: appbox_stock
+#: model:app.act_window,name:appbox_stock.act_stock_picking_incoming
+#: model:app.menu,name:appbox_stock.menu_stock_picking_incoming
+msgid "Receipts"
+msgstr "入库单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Today Activities"
+msgstr "今天的活动"
+
+#. module: appbox_stock
+#: model:ir.model,name:appbox_stock.model_stock_picking
+msgid "Transfer"
+msgstr "分拣单"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "Validate"
+msgstr "验证"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_search
+msgid "Waiting"
+msgstr "正在等待"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_immediate_transfer
+msgid "You have not recorded done quantities yet, by clicking on apply. Odoo will process all the reserved quantities."
+msgstr "你还没有输入完成数量，点击确认系统将处理所有已保留数量做为完成数量。"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_backorder_confirmation
+msgid "You have processed less products than the initial demand."
+msgstr "你已经处理了初始需求的部分产品。"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_overprocessed_transfer
+msgid "You have processed more than what was initially planned for the product."
+msgstr "你已经处理了超过初始计划的产品"
+
+#. module: appbox_stock
+#: model_terms:app.view,arch_original:appbox_stock.app_view_stock_picking_form
+msgid "e.g.PO0032"
+msgstr "例如：PO0032"
+
+#. module: appbox_stock
+#: model:ir.model.fields,field_description:appbox_stock.field_stock_move_line__qty_need_scan
+msgid "qty_need_scan"
+msgstr ""
+
+#. module: appbox_stock
+#: model:app.view,name:appbox_stock.app_view_immediate_transfer
+msgid "stock.immediate.transfer.view.form"
+msgstr ""
+
+#. module: appbox_stock
+#: model:app.view,name:appbox_stock.app_view_overprocessed_transfer
+msgid "stock.overprocessed.transfer.view.form"
+msgstr ""
+
+#. module: appbox_stock
+#: model:app.view,name:appbox_stock.app_view_backorder_confirmation
+msgid "stock_backorder_confirmation.view.form"
+msgstr ""

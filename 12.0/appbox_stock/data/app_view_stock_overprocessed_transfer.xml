@@ -8,14 +8,14 @@
         <form>
           <div class="section" style="display:flex; justify-content: center; align-items: center; min-height: 100px;">
             <div style="font-weight: bold; font-size: 2rem;">
-              你已经处理了超过初始计划的产品
+              You have processed more than what was initially planned for the product.
               <field name="overprocessed_product_name" class="value-center" attrs="{'nolabel': true}"/>
-              您确认要验证这个选择吗？
+              Are you sure you want to validate this picking?
             </div>
           </div>
           <footer>
-            <button name="action_confirm" barcode="BTN_CONFIRM" string="确认" type="object" bgcolor="#23d18b"/>
-            <button type="cancel" barcode="BTN_CANCEL" string="取消" bgcolor="#ff3b2f"/>
+            <button name="action_confirm" barcode="BTN_CONFIRM" string="Confirm" type="object" bgcolor="#23d18b"/>
+            <button type="cancel" barcode="BTN_CANCEL" string="Cancel" bgcolor="#ff3b2f"/>
           </footer>
         </form>
       </field>

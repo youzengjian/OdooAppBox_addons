@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_stock.app_view_stock_picking_kanban">
-      <field name="name">库存调拨</field>
+      <field name="name">Pickings</field>
       <field name="res_model">stock.picking</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -17,12 +17,12 @@
     </record>
 
     <record model="app.view" id="appbox_stock.app_view_stock_picking_form">
-      <field name="name">库存调拨</field>
+      <field name="name">Pickings</field>
       <field name="res_model">stock.picking</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
         <form>
-          <div class="separator">基础信息：</div>
+          <div class="separator">Basic Information</div>
           <div class="section">
             <field name="picking_type_code" attrs="{'invisible': true}"/>
             <field name="move_type" attrs="{'invisible': true}"/>
@@ -33,7 +33,7 @@
             <field name="show_check_availability" attrs="{'invisible': true}"/>
             <field name="show_validate" attrs="{'invisible': true}"/>
             <field name="show_operations" attrs="{'invisible': true}"/>
-            <field name="name" string="单号"/>
+            <field name="name"/>
             <field name="state"/>
             <field name="partner_id" attrs="{'invisible': true}"/>
             <field name="location_id" attrs="{'invisible': true}" options="{'no_open': True, 'no_create': True}"/>
@@ -41,12 +41,12 @@
             <field name="picking_type_id" attrs="{'invisible': true, 'readonly': [('state', '!=', 'draft')]}" domain="[('code', '=', context.get('default_picking_type_code'))]" options="{'no_open': True, 'no_create': True}"/>
             <field name="backorder_id" attrs="{'invisible': [('backorder_id','=',False)], 'readonly': true}"/>
             <field name="scheduled_date" attrs="{'readonly': ['|', ('id', '=', False), ('state', 'in', ('done', 'cancel'))], 'required': [('id', '!=', False)]}"/>
-            <field name="date_done" string="生效日期" attrs="{'invisible': [('state', '!=', 'done')]}"/>
-            <field name="origin" attrs="{'invisible': [('origin', '=', false)]}" placeholder="例如：PO0032"/>
+            <field name="date_done" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+            <field name="origin" attrs="{'invisible': [('origin', '=', false)]}" placeholder="e.g.PO0032"/>
           </div>
-          <div class="separator">作业明细：</div>
+          <div class="separator">Move Lines</div>
           <div class="section">
-            <field name="move_line_ids" widget="picking_by_scan" label="作业" placeholder="明细行为空"
+            <field name="move_line_ids" widget="picking_by_scan" label="Move Lines" placeholder="No Data"
                    attrs="{'readonly': [('state', '=', 'done')], 'enbale_picking_scanner': true}"
                    group_fields="location_id,location_dest_id">
               <kanban style="display: flex; justify-content: space-between; align-items: center; flex-flow: wrap;">
@@ -87,37 +87,46 @@
             </field>
           </div>
           <footer>
-            <button type="object" name="action_confirm" barcode="BTN_CONFIRM" string="确认" bgcolor="#23d18b" attrs="{'invisible': [('show_mark_as_todo', '=', false)]}"/>
-            <button type="object" name="action_assign" barcode="BTN_ASSIGN" string="检查可用" bgcolor="#23d18b" attrs="{'invisible': [('show_check_availability', '=', False)]}"/>
-            <button type="object" name="app_button_validate" barcode="BTN_VALIDATE" string="验证" bgcolor="#23d18b" attrs="{'invisible': [('show_validate', '=', false)]}"/>
-            <button type="object" name="action_cancel"  barcode="BTN_CANCEL" string="取消" bgcolor="#ff3b2f" attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'confirmed', 'partially_available', 'draft', 'waiting')), ('is_locked', '=', False)]}"/>
+            <button type="object" name="action_confirm" barcode="BTN_CONFIRM" string="Confirm" bgcolor="#23d18b" attrs="{'invisible': [('show_mark_as_todo', '=', false)]}"/>
+            <button type="object" name="action_assign" barcode="BTN_ASSIGN" string="Check Availability" bgcolor="#23d18b" attrs="{'invisible': [('show_check_availability', '=', False)]}"/>
+            <button type="object" name="app_button_validate" barcode="BTN_VALIDATE" string="Validate" bgcolor="#23d18b" attrs="{'invisible': [('show_validate', '=', false)]}"/>
+            <button type="object" name="action_cancel"  barcode="BTN_CANCEL" string="Cancel" bgcolor="#ff3b2f" attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'confirmed', 'partially_available', 'draft', 'waiting')), ('is_locked', '=', False)]}"/>
           </footer>
         </form>
       </field>
     </record>
 
     <record model="app.view" id="appbox_stock.app_view_stock_picking_search">
-      <field name="name">库存调拨</field>
+      <field name="name">Pickings</field>
       <field name="res_model">stock.picking</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" string="拣货单" domain="['|',('name','ilike',self),('origin','ilike',self)]"/>
+          <field name="name" string="Picking" domain="['|',('name','ilike', self),('origin','ilike',self)]"/>
+          <field name="partner_id" string="Partner" domain="[('partner_id','child_of',self)]"/>
+          <field name="product_id" string="Product" domain="[('employee_id', 'ilike', self)]"/>
+          <field name="picking_type_id" string="Picking Type"  domain="[('picking_type_id', 'ilike', self)]"/>
+          <field name="group_id" string="Procurement Group"  domain="[('group_id', 'ilike', self)]"/>
           <filter_group>
-            <filter string="我的" domain="[('user_id','=',uid)]" name="my_sale_orders_filter"/>
+            <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+            <filter name="waiting" string="Waiting" domain="[('state','in', ('confirmed', 'waiting'))]"/>
+            <filter name="available" string="Ready" domain="[('state','in',('assigned', 'partially_available'))]"/>
+            <filter name="done" string="Done" domain="[('state','=','done')]"/>
+            <filter name="cancel" string="Cancelled" domain="[('state','=', 'cancel')]"/>
           </filter_group>
           <filter_group>
-            <filter string="报价单" name="draft" domain="[('state','=','draft')]"/>
-            <filter string="正在等待" name="waiting" domain="[('state','in', ('confirmed', 'waiting'))]"/>
-            <filter string="已就绪" name="available" domain="[('state','in',('assigned', 'partially_available'))]"/>
-            <filter string="已完成" name="done" domain="[('state','=','done')]"/>
-            <filter name="cancel" string="已取消" domain="[('state','=', 'cancel')]"/>
+            <filter name="late" string="Late" domain="[('scheduled_date','&lt;', time.strftime('%%Y-%%m-%%d %%H:%%M:%%S'))]"/>
           </filter_group>
           <filter_group>
-            <filter string="迟到" name="late" domain="[('scheduled_date','&lt;', context_today().strftime('%Y-%m-%d %H:%M:%S'))]"/>
+            <filter name="backorder" string="Backorders" domain="[('backorder_id','!=', False)]"/>
           </filter_group>
           <filter_group>
-            <filter string="欠单" name="backorder" domain="[('backorder_id','!=', False)]"/>
+            <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
+          </filter_group>
+          <filter_group>
+            <filter string="Late Activities" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter string="Today Activities" name="activities_today" domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+            <filter string="Future Activities" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
           </filter_group>
         </search>
       </field>
