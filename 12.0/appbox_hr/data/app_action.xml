@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.act_window" id="appbox_hr.act_employee">
-      <field name="name">员工</field>
+      <field name="name">Employees</field>
       <field name="res_model">hr.employee</field>
       <field name="target">self</field>
       <field name="view_mode">kanban,form</field>
