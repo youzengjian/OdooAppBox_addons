@@ -28,7 +28,7 @@
           <xpath expr="//div[@name='form_header_button']" position="inside">
             <button groups="sales_team.group_sale_salesman"
                     type="action" attrs="{'invisible': [('customer', '=', False)]}"
-                    name="appbox_base.act_opportunity" icon="fa-star" widget='statinfo'
+                    name="appbox_crm.act_opportunity" icon="fa-star" widget='statinfo'
                     context="{'search_default_partner_id': active_id}">
                 <field string="Opportunities" name="opportunity_count" class="value-left"/>
             </button>
