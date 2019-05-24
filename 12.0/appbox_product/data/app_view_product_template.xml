@@ -1,7 +1,7 @@
 <openerp>
   <data>
     <record model="app.view" id="appbox_product.app_view_product_template_kanban">
-      <field name="name">产品</field>
+      <field name="name">Products</field>
       <field name="res_model">product.template</field>
       <field name="type">kanban</field>
       <field name="arch_original" type="xml">
@@ -11,14 +11,14 @@
           </div>
           <div style="width: 50%; flex: 1 1 auto; margin-left: 1.5rem">
             <field name="name" class="value-left" style="font-weight:bold;"/>
-            <field name="list_price" widget="monetary" options="{'currency_field': 'currency_id'}" string="价格" attrs="{'nolabel': false}"/>
+            <field name="list_price" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'nolabel': false}"/>
           </div>
         </kanban>
       </field>
     </record>
 
     <record model="app.view" id="appbox_product.app_view_product_template_form">
-      <field name="name">产品</field>
+      <field name="name">Products</field>
       <field name="res_model">product.template</field>
       <field name="type">form</field>
       <field name="arch_original" type="xml">
@@ -35,22 +35,22 @@
     </record>
 
     <record model="app.view" id="appbox_product.app_view_product_template_search">
-      <field name="name">产品</field>
+      <field name="name">Products</field>
       <field name="res_model">product.template</field>
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" string="名称" domain="['|',('default_code','ilike',self),('name','ilike',self)]"/>
-          <field name="categ_id" string="类别" domain="[('categ_id', 'child_of', self)]"/>
-          <field name="product_variant_ids" string="产品规格" domain="['|', ('product_variant_ids.name','ilike',self), ('product_variant_ids.attribute_value_ids.attribute_id.name','ilike',self)]"/>
-          <field name="company_id" string="公司" domain="[('company_id', '=', self)]"/>
+          <field name="name" string="Name" domain="['|',('default_code','ilike',self),('name','ilike',self)]"/>
+          <field name="categ_id" string="Category" domain="[('categ_id', 'child_of', self)]"/>
+          <field name="product_variant_ids" string="Attribute" domain="['|', ('product_variant_ids.name','ilike',self), ('product_variant_ids.attribute_value_ids.attribute_id.name','ilike',self)]"/>
+          <field name="company_id" string="Company" domain="[('company_id', '=', self)]"/>
           <filter_group>
-            <filter string="服务" name="Services" domain="[('type','=','service')]"/>
-            <filter string="消耗品" name="consumable" domain="[('type','=','consu')]"/>
+            <filter string="Services" name="services" domain="[('type','=','service')]"/>
+            <filter string="Consumable" name="consumable" domain="[('type','=','consu')]"/>
           </filter_group>
           <filter_group>
-            <filter string="可销售" name="filter_to_sell" domain="[('sale_ok','=',1)]"/>
-            <filter string="可采购" name="filter_to_purchase" domain="[('purchase_ok', '=', 1)]"/>
+            <filter string="Can be Sold" name="filter_to_sell" domain="[('sale_ok','=',1)]"/>
+            <filter string="Can be Purchased" name="filter_to_purchase" domain="[('purchase_ok', '=', 1)]"/>
           </filter_group>
         </search>
       </field>
