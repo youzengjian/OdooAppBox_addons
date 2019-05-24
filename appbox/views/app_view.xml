@@ -30,10 +30,10 @@
               </group>
             </group>
             <notebook>
-              <page string="视图结构">
+              <page string="Architecture">
                 <field name="arch_original"/>
               </page>
-              <page string="继承该视图的视图列表">
+              <page string="inherited Views">
                 <field name="inherit_children_ids"/>
               </page>
             </notebook>

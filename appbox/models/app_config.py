@@ -8,7 +8,7 @@ if sys.version_info[0] < 3:
     sys.setdefaultencoding('utf-8')
 
 try:
-    from odoo import models, fields, api
+    from odoo import models, fields, api, _
 except:
     from openerp import models, fields, api
 
@@ -18,12 +18,12 @@ DEFAULT_TOKEN = '848e6b76-36c2-42ce-8819-6bc9b7c4bf4c'
 class app_config(models.Model):
     _name = 'app.config'
 
-    name = fields.Char(string=u"授权配置", default="授权配置", required=True, readonly=True)
-    url = fields.Char(string=u"授权服务器地址", default=DEFAULT_URL, required=True, readonly=False)
-    token = fields.Char(string=u"授权令牌", default=DEFAULT_TOKEN, required=True, readonly=False)
-    key = fields.Text(string=u"授权密钥", required=False, readonly=True)
-    expired_date = fields.Datetime(string=u"过期时间", required=False, readonly=True)
-    message = fields.Text(string=u"同步结果", required=False, readonly=True)
+    name = fields.Char(string=u"Authorization Setting", default=_("Authorization Setting"), required=True, readonly=True, translate=True)
+    url = fields.Char(string=u"Authorization Server", default=DEFAULT_URL, required=True, readonly=False)
+    token = fields.Char(string=u"Authorization Token", default=DEFAULT_TOKEN, required=True, readonly=False)
+    key = fields.Text(string=u"Authorization Key", required=False, readonly=True)
+    expired_date = fields.Datetime(string=u"Authorization Expired Date", required=False, readonly=True)
+    message = fields.Text(string=u"Update Result Message", required=False, readonly=True)
 
     @api.one
     def action_update_key(self):
@@ -39,7 +39,7 @@ class app_config(models.Model):
                 self.expired_date = res['expired_date']
             self.message = res['message']
         except:
-            self.message = u'系统错误'
+            self.message = _('System Error!')
         return True
 
     @api.model

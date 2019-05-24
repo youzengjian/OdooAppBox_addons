@@ -1,19 +1,19 @@
 <openerp>
   <data>
     <record model="ir.actions.act_window" id="appbox.act_app_menu">
-      <field name="name">APP菜单配置</field>
+      <field name="name">App Menu</field>
       <field name="res_model">app.menu</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="appbox.act_app_act_window">
-      <field name="name">APP窗口动作配置</field>
+      <field name="name">App Action</field>
       <field name="res_model">app.act_window</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="appbox.act_app_view">
-      <field name="name">APP视图配置</field>
+      <field name="name">App View</field>
       <field name="res_model">app.view</field>
       <field name="view_mode">tree,form</field>
     </record>

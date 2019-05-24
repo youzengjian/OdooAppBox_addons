@@ -6,8 +6,8 @@
       <field name="arch" type="xml">
         <form string="Config">
           <header>
-            <button string="立即更新授权" name="action_update_key" type="object" class="oe_highlight"/>
-            <button string="恢复默认配置" name="action_set_default" type="object" class="oe_highlight"/>
+            <button string="Update Immediately" name="action_update_key" type="object" class="oe_highlight"/>
+            <button string="Restore Default " name="action_set_default" type="object" class="oe_highlight"/>
           </header>
           <sheet>
             <group>

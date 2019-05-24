@@ -9,23 +9,25 @@ if sys.version_info[0] < 3:
     sys.setdefaultencoding('utf-8')
 
 try:
-    from odoo import models, fields, api
+    from odoo import models, fields, api, _
+    from odoo.tools.translate import xml_translate, TRANSLATED_ATTRS
 except:
     from openerp import models, fields, api
+    xml_translate = False
 
 
 class app_view(models.Model):
     _name = 'app.view'
     _order = "priority,name,id"
 
-    name = fields.Char(string=u"视图名称", required=True)
-    res_model = fields.Char(string=u"视图对象", required=True)
-    type = fields.Selection(string=u"视图类型", selection=[('kanban', '看板视图'), ('form', '表单视图'), ('search', '搜索视图')], required=True)
-    arch_original = fields.Text(string=u"视图结构", required=True)
-    arch = fields.Text(string=u"视图结构", compute='_compute_arch')
-    inherit_id = fields.Many2one('app.view', string='继承视图', ondelete='restrict')
-    inherit_children_ids = fields.One2many('app.view', 'inherit_id', string='继承该视图的视图')
-    priority = fields.Integer(string='序号', help="数字越小，优先级越高", default=16, required=True)
+    name = fields.Char(string=u"View name", required=True, translate=True)
+    res_model = fields.Char(string=u"Model", required=True)
+    type = fields.Selection(string=u"View Type", selection=[('kanban', 'Kanban'), ('form', 'Form'), ('search', 'Search')], required=True)
+    arch_original = fields.Text(string=u"Architecture", required=True, translate=xml_translate)
+    arch = fields.Text(string=u"Architecture", compute='_compute_arch')
+    inherit_id = fields.Many2one('app.view', string='View inheritance', ondelete='restrict')
+    inherit_children_ids = fields.One2many('app.view', 'inherit_id', string='inherited Views')
+    priority = fields.Integer(string='Sequence', help="lower values mean higher priority.", default=16, required=True)
 
     @api.onchange('arch_original')
     def onchang_arch_original(self):
@@ -65,23 +67,23 @@ class app_view(models.Model):
             view_arch_tree = etree.fromstring(view_arch)
             xpath_tree = etree.fromstring(xpath_arch)
             if xpath_tree.tag != 'data':
-                raise Exception('继承视图的根节点必须是data节点')
+                raise Exception(_("Inherited view's root element must be 'data'."))
             for xpath_element in xpath_tree:
                 if xpath_element.tag != 'xpath':
                     continue
 
                 expr = xpath_element.get('expr', None)
                 if expr is None:
-                    raise Exception('xpath节点的expr属性不能为空')
+                    raise Exception(_('The expr attribute of an xpath element cannot be empty.'))
                 nodes = etree.ETXPath(expr)(view_arch_tree)
                 node = nodes[0] if nodes else None
                 if node is None:
-                    raise Exception('无法通过表达式' + expr + '在父视图中找到相关节点')
+                    raise Exception(_("Element cannot be located in parent view, XPATH Expression:") + expr)
 
                 pos = xpath_element.get('position', 'inside')
                 if pos == 'replace':
                     if node.getparent() is None:
-                        raise Exception('您不能对父视图的根节点执行替换操作')
+                        raise Exception(_('You cannot perform a replacement operation on the root node of the parent view.'))
                     else:
                         for child in xpath_element:
                             node.addprevious(child)
@@ -109,7 +111,7 @@ class app_view(models.Model):
                     for child in xpath_element:
                         node.addprevious(child)
                 else:
-                    self.raise_view_error("不支持的position属性（" + pos + ")，position必须为inside、replace、after、before或attributes")
+                    self.raise_view_error(_("Unsupported pos attribute:") + pos)
             return etree.tostring(view_arch_tree, encoding='utf-8')
 
         def combine_view(view_arch, child_view, recursion):

@@ -1,9 +1,9 @@
 <openerp>
   <data>
     <menuitem name="Appbox" sequence="1" id="appbox.menu_setting" parent="base.menu_administration"/>
-    <menuitem name="菜单" sequence="0" id="appbox.app_menu" parent="appbox.menu_setting" action="appbox.act_app_menu"/>
-    <menuitem name="动作" sequence="1" id="appbox.act_window" parent="appbox.menu_setting" action="appbox.act_app_act_window"/>
-    <menuitem name="视图" sequence="2" id="appbox.app_view" parent="appbox.menu_setting" action="appbox.act_app_view"/>
-    <menuitem name="设置" sequence="3" id="appbox.app_config" parent="appbox.menu_setting" action="appbox.act_app_config"/>
+    <menuitem name="Menu Items" sequence="0" id="appbox.app_menu" parent="appbox.menu_setting" action="appbox.act_app_menu"/>
+    <menuitem name="Actions" sequence="1" id="appbox.act_window" parent="appbox.menu_setting" action="appbox.act_app_act_window"/>
+    <menuitem name="Views" sequence="2" id="appbox.app_view" parent="appbox.menu_setting" action="appbox.act_app_view"/>
+    <menuitem name="Authorization" sequence="3" id="appbox.app_config" parent="appbox.menu_setting" action="appbox.act_app_config"/>
   </data>
 </openerp>

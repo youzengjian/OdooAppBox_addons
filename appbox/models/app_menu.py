@@ -8,15 +8,15 @@ class app_menu(models.Model):
     _name = 'app.menu'
     _order = 'id desc'
 
-    name = fields.Char(string=u"菜单名称", required=True)
-    complete_name = fields.Char(string=u"完整路径", compute="_compute_complete_name")
-    sequence = fields.Integer(default=10, string=u"菜单顺序", help=u'数字越小优先级越高')
-    parent_id = fields.Many2one(comodel_name='app.menu', string=u'上级菜单', default=None)
-    action = fields.Reference(selection=[('app.act_window', 'APP窗口动作')], default=None)
-    icon = fields.Char(string=u"菜单图标", help=u'填写Awesome图标的名称，如fa-check，仅一级菜单有效。支持4.7.0版本的Awesome图标')
-    groups_id = fields.Many2many('res.groups', 'app_menu_group_rel',
-                                 'app_menu_id', 'gid', string='Groups',
-                                 help=u"指定可访问该菜单的用户组列表，留空表示所有用户都可以访问")
+    name = fields.Char(string=u"Menu", required=True, translate=True)
+    complete_name = fields.Char(string=u"Full Path", compute="_compute_complete_name")
+    sequence = fields.Integer(default=10, string=u"Sequence", help=u'Defines the order of menu, lower values mean higher priority')
+    parent_id = fields.Many2one(comodel_name='app.menu', string=u'Parent Menu', default=None)
+    action = fields.Reference(selection=[('app.act_window', 'Action')], default=None)
+    icon = fields.Char(string=u"Icon", help=u'Font Awesome(Version 4.7.0) icon name. eg:fa-check. Valid for root menu.')
+    groups_id = fields.Many2many('res.groups', 'app_menu_group_rel','app_menu_id', 'gid', string='Groups',
+                                 help="If you have groups, the visibility of this menu will be based on these groups and related object's read access." \
+                                      "If this field is empty, Odoo will compute visibility based on the related object's read access.")
 
     @api.depends('name', 'parent_id')
     def _compute_complete_name(self):
@@ -27,7 +27,7 @@ class app_menu(models.Model):
                 complete_name = parent_menu_item.name + '/' + complete_name
                 parent_menu_item = parent_menu_item.parent_id
             menu_item.complete_name = complete_name
-        return 'test'
+        return ''
 
     @api.onchange('parent_id')
     def onchange_parent_id(self):

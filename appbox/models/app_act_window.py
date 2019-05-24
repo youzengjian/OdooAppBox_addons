@@ -8,17 +8,17 @@ except:
 class app_act_window(models.Model):
     _name = 'app.act_window'
 
-    name = fields.Char(string=u"动作名称")
-    res_model = fields.Char(string=u"目标模型")
-    target = fields.Selection(selection=[('new', u'新窗口'), ('self', u'当前窗口')],
-                              string=u'目标窗口', default='self', required=True)
-    view_mode = fields.Char(string=u"允许的视图模式", default='kanban,form', required=True)
-    view_kanban = fields.Many2one(comodel_name='app.view', string=u'看板视图', domain="[('type', '=', 'kanban')]")
-    view_form = fields.Many2one(comodel_name='app.view', string=u'表单视图', domain="[('type', '=', 'form')]")
-    view_search = fields.Many2one(comodel_name='app.view', string=u'搜索视图', domain="[('type', '=', 'search')]")
-    domain = fields.Char(string=u"过滤条件")
-    context = fields.Char(string=u"上下文值", required=True, default='{}')
-    options = fields.Char(string=u"高级选项", default='{}')
+    name = fields.Char(string=u"Action Name", translate=True)
+    res_model = fields.Char(string=u"Object")
+    target = fields.Selection(selection=[('new', u'New Window'), ('self', u'Current Window')],
+                              string=u'Target Window', default='self', required=True)
+    view_mode = fields.Char(string=u"View Mode", default='kanban,form', required=True)
+    view_kanban = fields.Many2one(comodel_name='app.view', string=u'Kanban View', domain="[('type', '=', 'kanban')]")
+    view_form = fields.Many2one(comodel_name='app.view', string=u'Form View', domain="[('type', '=', 'form')]")
+    view_search = fields.Many2one(comodel_name='app.view', string=u'Search View', domain="[('type', '=', 'search')]")
+    domain = fields.Char(string=u"Domain Value")
+    context = fields.Char(string=u"Context Value", required=True, default='{}')
+    options = fields.Char(string=u"Options Value", default='{}')
 
     @api.model
     def get_action_data(self, action_id):

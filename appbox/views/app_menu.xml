@@ -31,7 +31,7 @@
               </group>
             </group>
             <notebook>
-              <page string="用户组">
+              <page string="Groups">
                 <field name="groups_id"/>
               </page>
             </notebook>

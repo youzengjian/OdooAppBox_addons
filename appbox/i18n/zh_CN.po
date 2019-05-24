@@ -1,0 +1,398 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 01:22+0000\n"
+"PO-Revision-Date: 2019-05-24 09:23+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: appbox
+#: model:ir.actions.server,name:appbox.act_app_config
+msgid "APP"
+msgstr ""
+
+#. module: appbox
+#: selection:app.menu,action:0
+#: model:ir.model.fields,field_description:appbox.field_app_menu__action
+msgid "Action"
+msgstr "动作"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__name
+msgid "Action Name"
+msgstr "动作名称"
+
+#. module: appbox
+#: model:ir.ui.menu,name:appbox.act_window
+msgid "Actions"
+msgstr "动作"
+
+#. module: appbox
+#: model:ir.actions.act_window,name:appbox.act_app_act_window
+msgid "App Action"
+msgstr "App动作"
+
+#. module: appbox
+#: model:ir.actions.act_window,name:appbox.act_app_menu
+msgid "App Menu"
+msgstr "App菜单"
+
+#. module: appbox
+#: model:ir.actions.act_window,name:appbox.act_app_view
+msgid "App View"
+msgstr "App视图"
+
+#. module: appbox
+#: model:ir.ui.menu,name:appbox.menu_setting
+msgid "Appbox"
+msgstr "Appbox"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__arch
+#: model:ir.model.fields,field_description:appbox.field_app_view__arch_original
+#: model_terms:ir.ui.view,arch_db:appbox.app_view_form
+msgid "Architecture"
+msgstr "视图结构"
+
+#. module: appbox
+#: model:ir.ui.menu,name:appbox.app_config
+msgid "Authorization"
+msgstr "授权"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_config__expired_date
+msgid "Authorization Expired Date"
+msgstr "授权过期日期"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_config__key
+msgid "Authorization Key"
+msgstr "授权密钥"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_config__url
+msgid "Authorization Server"
+msgstr "授权服务器"
+
+#. module: appbox
+#: code:addons/appbox/models/app_config.py:21
+#: model:app.config,name:appbox.model_app_config_default
+#: model:ir.model.fields,field_description:appbox.field_app_config__name
+#, python-format
+msgid "Authorization Setting"
+msgstr "授权配置"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_config__token
+msgid "Authorization Token"
+msgstr "授权令牌"
+
+#. module: appbox
+#: model_terms:ir.ui.view,arch_db:appbox.app_config_form
+msgid "Config"
+msgstr "配置"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__context
+msgid "Context Value"
+msgstr "上下文值"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__create_uid
+#: model:ir.model.fields,field_description:appbox.field_app_config__create_uid
+#: model:ir.model.fields,field_description:appbox.field_app_menu__create_uid
+#: model:ir.model.fields,field_description:appbox.field_app_view__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__create_date
+#: model:ir.model.fields,field_description:appbox.field_app_config__create_date
+#: model:ir.model.fields,field_description:appbox.field_app_menu__create_date
+#: model:ir.model.fields,field_description:appbox.field_app_view__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: appbox
+#: selection:app.act_window,target:0
+msgid "Current Window"
+msgstr "当前窗口"
+
+#. module: appbox
+#: model:ir.model.fields,help:appbox.field_app_menu__sequence
+msgid "Defines the order of menu, lower values mean higher priority"
+msgstr "定义菜单顺序，数字越小优先级越高"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__display_name
+#: model:ir.model.fields,field_description:appbox.field_app_config__display_name
+#: model:ir.model.fields,field_description:appbox.field_app_menu__display_name
+#: model:ir.model.fields,field_description:appbox.field_app_view__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__domain
+msgid "Domain Value"
+msgstr "过滤条件"
+
+#. module: appbox
+#: code:addons/appbox/models/app_view.py:81
+#, python-format
+msgid "Element cannot be located in parent view, XPATH Expression:"
+msgstr "在父视图中找不到指定节点，XPATH表达式："
+
+#. module: appbox
+#: model:ir.model.fields,help:appbox.field_app_menu__icon
+msgid "Font Awesome(Version 4.7.0) icon name. eg:fa-check. Valid for root menu."
+msgstr "Font Awesome(Version 4.7.0) 图标名称。如：fa-check。仅用于根菜单。"
+
+#. module: appbox
+#: selection:app.view,type:0
+msgid "Form"
+msgstr "表单"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__view_form
+msgid "Form View"
+msgstr "表单视图"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__complete_name
+msgid "Full Path"
+msgstr "完整路径"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__groups_id
+#: model_terms:ir.ui.view,arch_db:appbox.app_menu_form
+msgid "Groups"
+msgstr "群组"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__id
+#: model:ir.model.fields,field_description:appbox.field_app_config__id
+#: model:ir.model.fields,field_description:appbox.field_app_menu__id
+#: model:ir.model.fields,field_description:appbox.field_app_view__id
+msgid "ID"
+msgstr "ID"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__icon
+msgid "Icon"
+msgstr "图标"
+
+#. module: appbox
+#: model:ir.model.fields,help:appbox.field_app_menu__groups_id
+msgid "If you have groups, the visibility of this menu will be based on these groups and related object's read access.If this field is empty, Odoo will compute visibility based on the related object's read access."
+msgstr "如果定义了用户组，表示该菜单只有指定用户组可见。如果用户组为空，则表示不对用户组进行限制。"
+
+#. module: appbox
+#: code:addons/appbox/models/app_view.py:70
+#, python-format
+msgid "Inherited view's root element must be 'data'."
+msgstr "继承视图的根节点必须是data节点"
+
+#. module: appbox
+#: selection:app.view,type:0
+msgid "Kanban"
+msgstr "看板"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__view_kanban
+msgid "Kanban View"
+msgstr "看板视图"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window____last_update
+#: model:ir.model.fields,field_description:appbox.field_app_config____last_update
+#: model:ir.model.fields,field_description:appbox.field_app_menu____last_update
+#: model:ir.model.fields,field_description:appbox.field_app_view____last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__write_uid
+#: model:ir.model.fields,field_description:appbox.field_app_config__write_uid
+#: model:ir.model.fields,field_description:appbox.field_app_menu__write_uid
+#: model:ir.model.fields,field_description:appbox.field_app_view__write_uid
+msgid "Last Updated by"
+msgstr "最后更新者"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__write_date
+#: model:ir.model.fields,field_description:appbox.field_app_config__write_date
+#: model:ir.model.fields,field_description:appbox.field_app_menu__write_date
+#: model:ir.model.fields,field_description:appbox.field_app_view__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__name
+#: model_terms:ir.ui.view,arch_db:appbox.app_menu_form
+#: model_terms:ir.ui.view,arch_db:appbox.app_view_form
+msgid "Menu"
+msgstr "菜单"
+
+#. module: appbox
+#: model:ir.ui.menu,name:appbox.app_menu
+msgid "Menu Items"
+msgstr "菜单"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__res_model
+msgid "Model"
+msgstr "模型"
+
+#. module: appbox
+#: selection:app.act_window,target:0
+msgid "New Window"
+msgstr "新窗口"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__res_model
+msgid "Object"
+msgstr "对象"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__options
+msgid "Options Value"
+msgstr "高级选项"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__parent_id
+msgid "Parent Menu"
+msgstr "上级菜单"
+
+#. module: appbox
+#: model_terms:ir.ui.view,arch_db:appbox.app_config_form
+msgid "Restore Default"
+msgstr "恢复默认"
+
+#. module: appbox
+#: selection:app.view,type:0
+msgid "Search"
+msgstr "搜索"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__view_search
+msgid "Search View"
+msgstr "搜索视图"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_menu__sequence
+#: model:ir.model.fields,field_description:appbox.field_app_view__priority
+msgid "Sequence"
+msgstr "序号"
+
+#. module: appbox
+#: code:addons/appbox/models/app_config.py:42
+#, python-format
+msgid "System Error!"
+msgstr "系统错误！"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__target
+msgid "Target Window"
+msgstr "目标窗口"
+
+#. module: appbox
+#: code:addons/appbox/models/app_view.py:77
+#, python-format
+msgid "The expr attribute of an xpath element cannot be empty."
+msgstr "Xpath节点的expr属性不能为空。"
+
+#. module: appbox
+#: code:addons/appbox/models/app_view.py:114
+#, python-format
+msgid "Unsupported pos attribute:"
+msgstr "不支持的pos属性"
+
+#. module: appbox
+#: model:ir.actions.server,name:appbox.ir_cron_update_app_auth_key_ir_actions_server
+#: model:ir.cron,cron_name:appbox.ir_cron_update_app_auth_key
+#: model:ir.cron,name:appbox.ir_cron_update_app_auth_key
+msgid "Update Appbox Authorization key"
+msgstr "更新AppBox授权密钥"
+
+#. module: appbox
+#: model_terms:ir.ui.view,arch_db:appbox.app_config_form
+msgid "Update Immediately"
+msgstr "立即更新"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_config__message
+msgid "Update Result Message"
+msgstr "更新结果"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_act_window__view_mode
+msgid "View Mode"
+msgstr "视图模式"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__type
+msgid "View Type"
+msgstr "视图类型"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__inherit_id
+msgid "View inheritance"
+msgstr "继承视图"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__name
+msgid "View name"
+msgstr "视图名称"
+
+#. module: appbox
+#: model:ir.ui.menu,name:appbox.app_view
+msgid "Views"
+msgstr "视图"
+
+#. module: appbox
+#: code:addons/appbox/models/app_view.py:86
+#, python-format
+msgid "You cannot perform a replacement operation on the root node of the parent view."
+msgstr "您不能对父视图的根节点执行替换操作。"
+
+#. module: appbox
+#: model:ir.model,name:appbox.model_app_act_window
+msgid "app.act_window"
+msgstr "Appbox动作"
+
+#. module: appbox
+#: model:ir.model,name:appbox.model_app_config
+msgid "app.config"
+msgstr "Appbox配置"
+
+#. module: appbox
+#: model:ir.model,name:appbox.model_app_menu
+msgid "app.menu"
+msgstr "Appbox菜单"
+
+#. module: appbox
+#: model:ir.model,name:appbox.model_app_view
+msgid "app.view"
+msgstr "Appbox视图"
+
+#. module: appbox
+#: model:ir.model.fields,field_description:appbox.field_app_view__inherit_children_ids
+#: model_terms:ir.ui.view,arch_db:appbox.app_view_form
+msgid "inherited Views"
+msgstr "继承视图"
+
+#. module: appbox
+#: model:ir.model.fields,help:appbox.field_app_view__priority
+msgid "lower values mean higher priority."
+msgstr "数字越小优先级越高。"
