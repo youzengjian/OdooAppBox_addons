@@ -30,7 +30,7 @@
               <field name="image" class="value-left" widget="image" width="80" height="80" attrs="{'nolabel': true}" style="flex: 0 0 auto; border-bottom: none;"/>
               <div style="flex: 1 1 auto; display: flex; justify-content: flex-end; flex-flow: wrap;">
                 <button name="toggle_active" type="object" icon="fa-archive" widget='statinfo'>
-                  <field name="active" widget="boolean_button" options="{'terminology': 'Active,Archive'}"/>
+                  <field name="active" widget="boolean_button" string="Active,Archive"/>
                 </button>
               </div>
             </div>
