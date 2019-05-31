@@ -160,11 +160,6 @@
                 <field name="currency_id" attrs="{'invisible': True}"/>
                 <div class="separator-text" style="font-weight: bold;">Fiscal Information</div>
                 <field name="property_account_position_id" options="{'no_create': True, 'no_open': True}"/>
-                <div groups="account.group_account_user">
-                  <div class="separator-text" style="font-weight: bold;">Accounting Entries</div>
-                  <field name="property_account_receivable_id" options="{'no_open': true, 'no_create': true}"/>
-                  <field name="property_account_payable_id" options="{'no_open': true, 'no_create': true}"/>
-                </div>
               </div>
               <div attrs="{'invisible': ['|',('is_company','=',True),('parent_id','=',False)]}">
                 <div style="margin: 1.0rem 0;">Accounting-related settings are managed on the parent company</div>
