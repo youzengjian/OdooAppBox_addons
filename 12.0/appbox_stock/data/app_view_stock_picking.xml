@@ -36,8 +36,8 @@
             <field name="name"/>
             <field name="state"/>
             <field name="partner_id" attrs="{'invisible': true}"/>
-            <field name="location_id" attrs="{'invisible': true}" options="{'no_open': True, 'no_create': True}"/>
-            <field name="location_dest_id" attrs="{'invisible': true}" options="{'no_open': True, 'no_create': True}"/>
+            <field name="location_id" options="{'no_open': True, 'no_create': True}"/>
+            <field name="location_dest_id" options="{'no_open': True, 'no_create': True}"/>
             <field name="picking_type_id" attrs="{'invisible': true, 'readonly': [('state', '!=', 'draft')]}" domain="[('code', '=', context.get('default_picking_type_code'))]" options="{'no_open': True, 'no_create': True}"/>
             <field name="backorder_id" attrs="{'invisible': [('backorder_id','=',False)], 'readonly': true}"/>
             <field name="scheduled_date" attrs="{'readonly': ['|', ('id', '=', False), ('state', 'in', ('done', 'cancel'))], 'required': [('id', '!=', False)]}"/>

@@ -17,14 +17,5 @@
       <field name="domain">	[('picking_type_id.code', '=', 'outgoing')]</field>
       <field name="context">{'default_picking_type_code': 'outgoing'}</field>
     </record>
-
-    <record model="app.act_window" id="appbox_stock.act_stock_picking_internal">
-      <field name="name">Internal</field>
-      <field name="res_model">stock.picking</field>
-      <field name="target">self</field>
-      <field name="view_mode">kanban,form</field>
-      <field name="domain">	[('picking_type_id.code', '=', 'internal')]</field>
-      <field name="context">{'default_picking_type_code': 'internal'}</field>
-    </record>
   </data>
 </openerp>
