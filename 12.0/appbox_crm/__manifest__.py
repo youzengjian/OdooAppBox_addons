@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'appbox', 'appbox_base'],
+    'depends': ['base', 'sale', 'appbox', 'appbox_base', 'crm'],
 
     # always loaded
     'data': [
