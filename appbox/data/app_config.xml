@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data noupdate="1">
+<openerp>
+    <data>
         <record id="model_app_config_default" model="app.config">
             <field name="name">Authorization Setting</field>
         </record>
     </data>
-</odoo>
+</openerp>

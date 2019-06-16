@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 try:
     from odoo import models, fields, api, _
 except:
-    from openerp import models, fields, api
+    from openerp import models, fields, api, _
 
 DEFAULT_URL = 'http://auth.atknit.com/app_auth/'
 DEFAULT_TOKEN = '848e6b76-36c2-42ce-8819-6bc9b7c4bf4c'
