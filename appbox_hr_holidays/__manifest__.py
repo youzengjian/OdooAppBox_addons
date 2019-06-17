@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "appbox_hr_holidays",
+    'name': "appbox config for hr_leave",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        AppBox configuration for hr_leave""",
 
     'description': """
-        Long description of module's purpose
+        Android App: https://play.google.com/store/apps/details?id=com.odooappbox
+        iPhone App: https://apps.apple.com/us/app/odooappbox/id1465496744
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "You Zengjian",
+    'website': "https://github.com/youzengjian/OdooAppBox",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Human Resources',
+    'version': '1.0.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'hr', 'hr_holidays', 'appbox', 'appbox_base', 'appbox_hr'],

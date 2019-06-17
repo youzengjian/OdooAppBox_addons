@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "appbox",
+    'name': "appbox core module",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Core module for android client and iPhone client""",
 
     'description': """
-        Long description of module's purpose
+        Android App: https://play.google.com/store/apps/details?id=com.odooappbox
+        iPhone App: https://apps.apple.com/us/app/odooappbox/id1465496744
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "You Zengjian",
+    'website': "https://github.com/youzengjian/OdooAppBox",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Extra Tools',
+    'version': '1.0.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'web'],
