@@ -176,10 +176,10 @@
       <field name="type">search</field>
       <field name="arch_original" type="xml">
         <search>
-          <field name="name" domain="['|','|',('name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
-          <field name="category_id" domain="[('category_id','ilike', self)]"/>
-          <field name="user_id" domain="[('user_id','ilike', self)]"/>
-          <field name="parent_id" domain="[('parent_id','ilike', self)]"/>
+          <field name="name" string="Name" domain="['|','|',('name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+          <field name="category_id" string="Tags" domain="[('category_id','ilike', self)]"/>
+          <field name="user_id" string="Salesperson" domain="[('user_id','ilike', self)]"/>
+          <field name="parent_id" string="Related Company" domain="[('parent_id','ilike', self)]"/>
           <filter_group>
             <filter string="My Contacts" name="filter_my_partners" domain="[('user_id','=',uid)]"/>
           </filter_group>

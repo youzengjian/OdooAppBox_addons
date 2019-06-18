@@ -6,26 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-24 02:19+0000\n"
-"PO-Revision-Date: 2019-05-24 10:26+0800\n"
+"POT-Creation-Date: 2019-06-17 21:23+0000\n"
+"PO-Revision-Date: 2019-06-18 05:24+0800\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: \n"
+"Language: zh\n"
 "X-Generator: Poedit 2.2.3\n"
-"Last-Translator: \n"
-"Language: zh_CN\n"
 
 #. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
 msgid "Account"
 msgstr "会计"
-
-#. module: appbox_base
-#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
-msgid "Accounting Entries"
-msgstr "会计分录"
 
 #. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
@@ -138,6 +133,7 @@ msgstr "我的业务伙伴"
 
 #. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
 msgid "Name"
 msgstr "名称"
 
@@ -152,6 +148,11 @@ msgid "Purchase"
 msgstr "采购"
 
 #. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Related Company"
+msgstr "关联公司"
+
+#. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
 msgid "Sales"
 msgstr "销售"
@@ -160,6 +161,11 @@ msgstr "销售"
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
 msgid "Sales & Purchase"
 msgstr "销售&采购"
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Salesperson"
+msgstr "销售员"
 
 #. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
@@ -175,6 +181,11 @@ msgstr "街道..."
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
 msgid "Street2..."
 msgstr "街道2..."
+
+#. module: appbox_base
+#: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_search
+msgid "Tags"
+msgstr "标签"
 
 #. module: appbox_base
 #: model_terms:app.view,arch_original:appbox_base.app_view_res_partner_form
