@@ -1,0 +1,18 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_crm.menu_crm_root">
+      <field name="name">CRM</field>
+      <field name="sequence">1</field>
+      <field name="parent_id"/>
+      <field name="icon">fa-handshake-o</field>
+    </record>
+
+    <record model="app.menu" id="appbox_crm.menu_opportunity">
+      <field name="name">Leads</field>
+      <field name="sequence">1</field>
+      <field name="parent_id" ref="appbox_crm.menu_crm_root"/>
+      <field name="action" ref="appbox_crm.act_opportunity_assigned_to_me"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

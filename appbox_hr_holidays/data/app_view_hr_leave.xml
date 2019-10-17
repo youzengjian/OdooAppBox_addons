@@ -1,0 +1,48 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_kanban">
+      <field name="name">Leaves</field>
+      <field name="res_model">hr.leave</field>
+      <field name="type">kanban</field>
+      <field name="arch_original" type="xml">
+        <kanban>
+          <field name="state" attrs="{'invisible': true}"/>
+          <field name="employee_id" attrs="{'nolabel': false}" style="font-weight: bold;"/>
+          <field name="holiday_status_id" attrs="{'nolabel': false}"/>
+          <field name="name" attrs="{'nolabel': false}"/>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_form">
+      <field name="name">Leaves</field>
+      <field name="res_model">hr.leave</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="section">
+            <field name="state" attrs="{'invisible': true}"/>
+            <field name="employee_id" style="font-weight: bold;"/>
+            <field name="holiday_status_id"/>
+            <field name="name"/>
+            <field name="number_of_days_display"/>
+            <field name="request_date_from"/>
+            <field name="request_date_to"/>
+          </div>
+        </form>
+      </field>
+    </record>
+    
+    <record model="app.view" id="appbox_hr_holidays.app_view_hr_leave_search">
+      <field name="name">Leaves</field>
+      <field name="res_model">hr.leave</field>
+      <field name="type">search</field>
+      <field name="arch_original" type="xml">
+        <search>
+          <field name="name" string="Name" domain="[('name','ilike',self)]"/>
+          <field name="employee_id" string="Employee" domain="[('employee_id', 'ilike', self)]"/>
+        </search>
+      </field>
+    </record>
+  </data>
+</openerp>

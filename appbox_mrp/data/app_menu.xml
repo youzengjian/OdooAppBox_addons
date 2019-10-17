@@ -1,0 +1,18 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_mrp.menu_production_root">
+      <field name="name">Manufacturing</field>
+      <field name="sequence">3</field>
+      <field name="parent_id"/>
+      <field name="icon"/>
+    </record>
+
+    <record model="app.menu" id="appbox_mrp.menu_mrp_workorder">
+      <field name="name">Work Order</field>
+      <field name="sequence">1</field>
+      <field name="parent_id" ref="appbox_mrp.menu_production_root"/>
+      <field name="action" ref="appbox_mrp.act_mrp_workorder"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

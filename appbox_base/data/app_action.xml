@@ -1,0 +1,15 @@
+<openerp>
+  <data>
+    <record model="app.act_window" id="appbox_base.act_res_partner">
+      <field name="name">Contacts</field>
+      <field name="res_model">res.partner</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_base.app_view_res_partner_kanban"/>
+      <field name="view_form" ref="appbox_base.app_view_res_partner_form"/>
+      <field name="view_search" ref="appbox_base.app_view_res_partner_search"/>
+      <field name="domain">[]</field>
+      <field name="context">{}</field>
+    </record>
+  </data>
+</openerp>

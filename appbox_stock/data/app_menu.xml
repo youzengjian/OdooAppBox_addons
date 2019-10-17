@@ -1,0 +1,26 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_stock.menu_warehouse_root">
+      <field name="name">Inventory</field>
+      <field name="sequence">2</field>
+      <field name="parent_id"/>
+      <field name="icon"/>
+    </record>
+
+    <record model="app.menu" id="appbox_stock.menu_stock_picking_incoming">
+      <field name="name">Receipts</field>
+      <field name="sequence">1</field>
+      <field name="parent_id" ref="appbox_stock.menu_warehouse_root"/>
+      <field name="action" ref="appbox_stock.act_stock_picking_incoming"/>
+      <field name="icon"/>
+    </record>
+
+    <record model="app.menu" id="appbox_stock.menu_stock_picking_outgoing">
+      <field name="name">Delivery Orders</field>
+      <field name="sequence">2</field>
+      <field name="parent_id" ref="appbox_stock.menu_warehouse_root"/>
+      <field name="action" ref="appbox_stock.act_stock_picking_outgoing"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

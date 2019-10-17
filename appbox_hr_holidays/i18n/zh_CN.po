@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_hr_holidays
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 03:24+0000\n"
+"PO-Revision-Date: 2019-05-24 11:26+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. module: appbox_hr_holidays
+#: model_terms:app.view,arch_original:appbox_hr_holidays.app_view_hr_leave_search
+msgid "Employee"
+msgstr "员工"
+
+#. module: appbox_hr_holidays
+#: model:app.view,name:appbox_hr_holidays.app_view_hr_employee_inherit_hr_employee_form
+msgid "Employees"
+msgstr "员工"
+
+#. module: appbox_hr_holidays
+#: model:app.act_window,name:appbox_hr_holidays.act_open_hr_leave
+#: model_terms:app.view,arch_original:appbox_hr_holidays.app_view_hr_employee_inherit_hr_employee_form
+#: model:app.view,name:appbox_hr_holidays.app_view_hr_leave_form
+#: model:app.view,name:appbox_hr_holidays.app_view_hr_leave_kanban
+#: model:app.view,name:appbox_hr_holidays.app_view_hr_leave_search
+msgid "Leaves"
+msgstr "休假"
+
+#. module: appbox_hr_holidays
+#: model_terms:app.view,arch_original:appbox_hr_holidays.app_view_hr_employee_inherit_hr_employee_form
+msgid "Leaves Left"
+msgstr "剩余休假"
+
+#. module: appbox_hr_holidays
+#: model_terms:app.view,arch_original:appbox_hr_holidays.app_view_hr_leave_search
+msgid "Name"
+msgstr "名称"
+
+#. module: appbox_hr_holidays
+#: model_terms:app.view,arch_original:appbox_hr_holidays.app_view_hr_employee_inherit_hr_employee_form
+msgid "days"
+msgstr "天"

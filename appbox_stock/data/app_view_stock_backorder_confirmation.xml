@@ -1,0 +1,27 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_stock.app_view_backorder_confirmation">
+      <field name="name">stock_backorder_confirmation.view.form</field>
+      <field name="res_model">stock.backorder.confirmation</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <field name="id" attrs="{'invisible': true}"/>
+          <div class="section" style="display:flex; justify-content: center; align-items: center; min-height: 100px;">
+            <div style="font-weight: bold; font-size: 2rem;">
+              You have processed less products than the initial demand.
+            </div>
+          </div>
+          <div class="section">
+            Create a backorder if you expect to process the remaining products later. Do not create a backorder if you will not process the remaining products.
+          </div>
+          <footer>
+            <button name="process" barcode="BTN_BACKORDER" string="Create Backorder" type="object" bgcolor="#23d18b"/>
+            <button name="process_cancel_backorder" barcode="BTN_NOBACKORDER" string="No Backorder" type="object" bgcolor="#23d18b"/>
+            <button string="Cancel" type="cancel" bgcolor="#ff3b2f"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

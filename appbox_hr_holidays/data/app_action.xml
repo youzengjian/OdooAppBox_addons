@@ -1,0 +1,15 @@
+<openerp>
+  <data>
+    <record model="app.act_window" id="appbox_hr_holidays.act_open_hr_leave">
+      <field name="name">Leaves</field>
+      <field name="res_model">hr.leave</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_hr_holidays.app_view_hr_leave_kanban"/>
+      <field name="view_form" ref="appbox_hr_holidays.app_view_hr_leave_form"/>
+      <field name="view_search" ref="appbox_hr_holidays.app_view_hr_leave_search"/>
+      <field name="domain">	[('holiday_type','=','employee'), ('state','!=', 'refuse')]</field>
+      <field name="context">{'search_default_employee_id': [active_id], 'default_employee_id': active_id, 'search_default_group_type': 1, 'search_default_year': 1}</field>
+    </record>
+  </data>
+</openerp>

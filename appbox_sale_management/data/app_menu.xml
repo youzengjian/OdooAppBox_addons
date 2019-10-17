@@ -1,0 +1,26 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_sale_management.menu_sale_root">
+      <field name="name">Sales</field>
+      <field name="sequence">1</field>
+      <field name="parent_id"/>
+      <field name="icon">fa-line-chart</field>
+    </record>
+
+    <record model="app.menu" id="appbox_sale_management.menu_sale_order_quotation">
+      <field name="name">Quotations</field>
+      <field name="sequence">2</field>
+      <field name="parent_id" ref="appbox_sale_management.menu_sale_root"/>
+      <field name="action" ref="appbox_sale_management.act_sale_order_quotation"/>
+      <field name="icon"/>
+    </record>
+
+    <record model="app.menu" id="appbox_sale_management.menu_sale_order">
+      <field name="name">Orders</field>
+      <field name="sequence">3</field>
+      <field name="parent_id" ref="appbox_sale_management.menu_sale_root"/>
+      <field name="action" ref="appbox_sale_management.act_sale_order"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

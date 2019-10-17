@@ -1,0 +1,48 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_sale_management.app_view_account_voucher_form">
+      <field name="name">Vouchers</field>
+      <field name="res_model">account.voucher</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="sepatator"></div>
+          <div class="section">
+            <field name="state" attrs="{'invisible': true}"/>
+            <field name="payment_rate" attrs="{'invisible': true}"/>
+            <field name="payment_rate_currency_id" attrs="{'invisible': true}"/>
+            <field name="partner_id" attrs="{'required': true}" context="{'search_default_customer': 1}"/>
+            <field name="currency_id" attrs="{'invisible': true}" options="{'no_open': true, 'no_create': true}"/>
+            <field name="line_cr_ids" attrs="{'invisible': true}" context="{'journal_id':journal_id, 'type':type, 'partner_id':partner_id}">
+              <kanban>
+                <field name="state"  attrs="{'invisible': true}"/>
+              </kanban>
+            </field>
+
+            <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="journal_id" options="{'no_create': True, 'no_edit': True}" domain="[('type','in',['bank', 'cash'])]"/>
+
+            <field name="date" attrs="{'invisible': true}"/>
+            <field name="period_id"/>
+            <field name="reference" placeholder="e.g. 003/10"/>
+            <field name="name" placeholder="e.g. Invoice SAJ/0042"/>
+            <field name="company_id" options="{'no_create': True, 'no_edit': True}" groups="base.group_multi_company"/>
+            <field name="account_id" options="{'no_create': True, 'no_edit': True}" attrs="{'invisible': true}"/>
+            <field name="pre_line" attrs="{'invisible': true}"/>
+            <field name="type" attrs="{'invisible': true}"/>
+
+            <field name="writeoff_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="payment_option" attrs="{'invisible':[('writeoff_amount','=',0)], 'required': true}"/>
+            <field name="writeoff_acc_id" attrs="{'invisible':['|', ('payment_option','!=','with_writeoff'), ('writeoff_amount','=',0)], 'required':[('payment_option','=','with_writeoff'), ('writeoff_amount','!=',0)]}" domain="[('type','=','other')]"/>
+            <field name="comment" attrs="{'invisible':['|', ('payment_option','!=','with_writeoff'), ('writeoff_amount','=',0)]}"/>
+            <field name="analytic_id" groups="analytic.group_analytic_accounting" attrs="{'invisible':['|', ('payment_option','!=','with_writeoff'), ('writeoff_amount','=',0)]}"/>
+          </div>
+          <footer>
+            <button type="cancel" string="Cancel"/>
+            <button type="object" name="button_proforma_voucher" string="Validate" bgcolor="#23d18b"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

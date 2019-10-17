@@ -1,0 +1,243 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_sale_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 17:13+0000\n"
+"PO-Revision-Date: 2019-05-25 01:22+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_form
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+msgid "Amount"
+msgstr "合计"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_form
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+msgid "Basic Information"
+msgstr "基础信息"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_voucher_form
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_advance_payment_inv
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+msgid "Confrim"
+msgstr "确认"
+
+#. module: appbox_sale_management
+#: model:app.view,name:appbox_sale_management.app_view_crm_inherit_res_partner_form
+msgid "Contacts"
+msgstr "联系人"
+
+#. module: appbox_sale_management
+#: model:app.act_window,name:appbox_sale_management.act_sale_advance_payment_inv
+msgid "Create Invoice"
+msgstr "创建发票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_advance_payment_inv
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+#: model:app.view,name:appbox_sale_management.app_view_sale_advance_payment_inv
+msgid "Create Invoices"
+msgstr "创建发票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Done"
+msgstr "已完成"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Draft"
+msgstr "报价单"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Future Activities"
+msgstr "未来的活动"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Invoice"
+msgstr "发票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_form
+msgid "Invoice Lines"
+msgstr "发票明细"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+#: model:app.view,name:appbox_sale_management.app_view_account_invoice_form
+#: model:app.view,name:appbox_sale_management.app_view_account_invoice_kanban
+#: model:app.view,name:appbox_sale_management.app_view_account_invoice_search
+msgid "Invoices"
+msgstr "发票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Late Activities"
+msgstr "逾期活动"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Mine"
+msgstr "我的"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "My Activities"
+msgstr "我的活动"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "My Invoices"
+msgstr "我的发票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Name"
+msgstr "名称"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_kanban
+msgid "No Data"
+msgstr "没有数据"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Open"
+msgstr "打开"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_form
+msgid "Order Lines"
+msgstr "订单明细"
+
+#. module: appbox_sale_management
+#: model:app.act_window,name:appbox_sale_management.act_sale_order
+#: model:app.menu,name:appbox_sale_management.menu_sale_order
+#: model:app.view,name:appbox_sale_management.app_view_sale_order_form
+#: model:app.view,name:appbox_sale_management.app_view_sale_order_kanban
+#: model:app.view,name:appbox_sale_management.app_view_sale_order_search
+msgid "Orders"
+msgstr "订单"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Overdue"
+msgstr "已逾期"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Paid"
+msgstr "已付款"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Partner"
+msgstr "业务伙伴"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Period"
+msgstr "期间"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Product"
+msgstr "产品"
+
+#. module: appbox_sale_management
+#: model:app.act_window,name:appbox_sale_management.act_sale_order_quotation
+#: model:app.menu,name:appbox_sale_management.menu_sale_order_quotation
+msgid "Quotations"
+msgstr "报价单"
+
+#. module: appbox_sale_management
+#: model:app.act_window,name:appbox_sale_management.act_open_partner_quotation_and_sale_order
+msgid "Quotations and Orders"
+msgstr "报价单及销售"
+
+#. module: appbox_sale_management
+#: model:ir.model,name:appbox_sale_management.model_sale_order
+msgid "Sale Order"
+msgstr "销售订单"
+
+#. module: appbox_sale_management
+#: model:app.menu,name:appbox_sale_management.menu_sale_root
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_crm_inherit_res_partner_form
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Sales"
+msgstr "销售订单"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Sales Team"
+msgstr "销售团队"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "Salesperson"
+msgstr "业务员"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_form
+msgid "Tax Lines"
+msgstr "税费明细"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_order_search
+msgid "To Invoice"
+msgstr "待开票"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_invoice_search
+msgid "Today Activities"
+msgstr "今日活动"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_voucher_form
+msgid "Validate"
+msgstr "登记付款"
+
+#. module: appbox_sale_management
+#: model:app.view,name:appbox_sale_management.app_view_account_voucher_form
+msgid "Vouchers"
+msgstr "收据"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_sale_advance_payment_inv
+msgid "What do you want to invoice?"
+msgstr "选择开票方式"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_voucher_form
+msgid "e.g. 003/10"
+msgstr "例如：003/10"
+
+#. module: appbox_sale_management
+#: model_terms:app.view,arch_original:appbox_sale_management.app_view_account_voucher_form
+msgid "e.g. Invoice SAJ/0042"
+msgstr "例如：Invoice SAJ/0042"

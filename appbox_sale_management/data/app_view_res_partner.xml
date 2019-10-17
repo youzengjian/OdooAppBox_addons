@@ -1,0 +1,22 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_sale_management.app_view_crm_inherit_res_partner_form">
+      <field name="name">Contacts</field>
+      <field name="res_model">res.partner</field>
+      <field name="type">form</field>
+      <field name="inherit_id" ref="appbox_base.app_view_res_partner_form"/>
+      <field name="priority">40</field>
+      <field name="arch_original" type="xml">
+        <data>
+          <xpath expr="//div[@name='form_header_button']" position="inside">
+            <button groups="sales_team.group_sale_salesman"
+                    type="action" name="appbox_sale_management.act_open_partner_quotation_and_sale_order"
+                   attrs="{'invisible': [('customer', '=', False)]}" icon="fa-usd" widget="statinfo">
+                <field string="Sales" name="sale_order_count" class="value-left"/>
+            </button>
+          </xpath>
+        </data>
+      </field>
+    </record>
+  </data>
+</openerp>

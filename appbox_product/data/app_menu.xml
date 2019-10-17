@@ -1,0 +1,11 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_product.menu_product_template">
+      <field name="name">Products</field>
+      <field name="sequence">2</field>
+      <field name="parent_id" ref="appbox_base.menu_basic_info_root"/>
+      <field name="action" ref="appbox_product.act_product_template"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

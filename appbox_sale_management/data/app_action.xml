@@ -1,0 +1,49 @@
+<openerp>
+  <data>
+    <record model="app.act_window" id="appbox_sale_management.act_sale_order_quotation">
+      <field name="name">Quotations</field>
+      <field name="res_model">sale.order</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_sale_management.app_view_sale_order_kanban"/>
+      <field name="view_form" ref="appbox_sale_management.app_view_sale_order_form"/>
+      <field name="view_search" ref="appbox_sale_management.app_view_sale_order_search"/>
+      <field name="domain">[('state','in',('draft','sent','cancel'))] </field>
+      <field name="context">{'search_default_my_sale_orders_filter': 1}</field>
+    </record>
+
+    <record model="app.act_window" id="appbox_sale_management.act_sale_order">
+      <field name="name">Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_sale_management.app_view_sale_order_kanban"/>
+      <field name="view_form" ref="appbox_sale_management.app_view_sale_order_form"/>
+      <field name="view_search" ref="appbox_sale_management.app_view_sale_order_search"/>
+      <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+      <field name="context">{'search_default_my_sale_orders_filter': 1}</field>
+    </record>
+
+    <record model="app.act_window" id="appbox_sale_management.act_open_partner_quotation_and_sale_order">
+      <field name="name">Quotations and Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_sale_management.app_view_sale_order_kanban"/>
+      <field name="view_form" ref="appbox_sale_management.app_view_sale_order_form"/>
+      <field name="view_search" ref="appbox_sale_management.app_view_sale_order_search"/>
+      <field name="domain">[]</field>
+      <field name="context">{'search_default_partner_id': active_id}</field>
+    </record>
+
+    <record model="app.act_window" id="appbox_sale_management.act_sale_advance_payment_inv">
+      <field name="name">Create Invoices</field>
+      <field name="res_model">sale.advance.payment.inv</field>
+      <field name="target">new</field>
+      <field name="view_mode">form</field>
+      <field name="view_form" ref="appbox_sale_management.app_view_sale_advance_payment_inv"/>
+      <field name="domain">[]</field>
+      <field name="context">{}</field>
+    </record>
+  </data>
+</openerp>

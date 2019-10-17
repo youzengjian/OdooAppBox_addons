@@ -1,0 +1,97 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_hr.app_view_hr_employee_kanban">
+      <field name="name">Employees</field>
+      <field name="res_model">hr.employee</field>
+      <field name="type">kanban</field>
+      <field name="arch_original" type="xml">
+        <kanban style="display:flex;">
+          <div style="flex: 0 0 auto; align-self: center;">
+            <field name="image" widget="avatar" width="64" height="64"/>
+          </div>
+          <div style="width: 50%; flex: 1 1 auto; display: flex; flex-flow: row wrap; margin-left: 1.5rem">
+            <field name="name" class="value-left" style="width: 100%; flex: 1 1 auto; font-weight:bold;"/>
+            <field name="work_email" class="value-left" style="width: 100%; flex: 1 1 auto;" attrs="{'invisible': ['|', ('work_email', '=', false), ('work_email', '=', '')]}"/>
+            <field name="work_phone" class="value-left" style="width: 100%; flex: 1 1 auto;" attrs="{'invisible': ['|', ('work_phone', '=', false), ('work_phone', '=', '')]}"/>
+            <field name="mobile_phone" class="value-left" style="width: 100%; flex: 1 1 auto;" attrs="{'invisible': ['|', ('mobile_phone', '=', false), ('mobile_phone', '=', '')]}"/>
+          </div>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_hr.app_view_hr_employee_form">
+      <field name="name">Employees</field>
+      <field name="res_model">hr.employee</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="section">
+            <div style="display: flex; justify-content: flex-end; margin: 1rem 0;">
+              <field name="image" class="value-left" widget="image" width="80" height="80" attrs="{'nolabel': true}" style="flex: 0 0 auto; border-bottom: none;"/>
+              <div style="flex: 1 1 auto; display: flex; justify-content: flex-end; flex-flow: wrap;">
+                <button name="toggle_active" type="object" icon="fa-archive" widget='statinfo'>
+                  <field name="active" widget="boolean_button" string="Active,Archive"/>
+                </button>
+              </div>
+            </div>
+            <field name="name" placeholder="Employee's Name" attrs="{'required' : True}"/>
+            <field name="category_ids" options="{'no_create': True}" placeholder="e.g.Part Time" groups="hr.group_hr_user"/>
+          </div>
+          <div widget="tabs">
+            <div widget="tab" string="Work Information">
+              <div class="separator-text" style="font-weight:bold;">Contact Information</div>
+              <field name="address_id"/>
+              <field name="work_location"/>
+              <field name="work_email"/>
+              <field name="mobile_phone"/>
+              <field name="work_phone"/>
+              <div class="separator-text" style="font-weight:bold;">Position</div>
+              <field name="department_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="job_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="parent_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="coach_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="resource_calendar_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="notes" placeholder="Other Information ..." class="value-left" attrs="{'nolabel': true}"/>
+            </div>
+
+            <div widget="tab" string="Private Information">
+              <div class="separator-text" style="font-weight:bold;">Citizenship &amp; Other Information</div>
+              <field name="country_id" options="{'no_open': True, 'no_create': True}"/>
+              <field name="identification_id" groups="hr.group_hr_user"/>
+              <field name="passport_id" groups="hr.group_hr_user"/>
+              <field name="bank_account_id" context="{'default_partner_id': address_home_id}" options="{'no_open': True, 'no_create': True}"/>
+              <div class="separator-text" style="font-weight:bold;">Contact Information</div>
+              <field name="address_home_id"/>
+              <field name="is_address_home_a_company"  attrs="{'invisible': True}"/>
+              <div class="separator-text" style="font-weight:bold;">Status</div>
+              <field name="gender"/>
+              <field name="marital"/>
+              <div class="separator-text" style="font-weight:bold;">Birth</div>
+              <field name="birthday"/>
+              <div class="separator-text" style="font-weight:bold;">Work Permit</div>
+              <field name="visa_no"/>
+              <field name="permit_no"/>
+              <field name="visa_expire"/>
+            </div>
+            <div widget="tab" string="HR Setting">
+              <div class="separator-text" style="font-weight:bold;">Status</div>
+              <field name="company_id" groups="base.group_multi_company"/>
+              <field name="user_id" options="{'no_open': True, 'no_create': True}"/>
+            </div>
+          </div>
+        </form>
+      </field>
+    </record>
+    
+    <record model="app.view" id="appbox_hr.app_view_hr_employee_search">
+      <field name="name">Employees</field>
+      <field name="res_model">hr.employee</field>
+      <field name="type">search</field>
+      <field name="arch_original" type="xml">
+        <search>
+          <field name="name" string="Employee's Name" domain="[('name','ilike',self)]"/>
+        </search>
+      </field>
+    </record>
+  </data>
+</openerp>

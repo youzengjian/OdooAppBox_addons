@@ -1,0 +1,32 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_sale_management.app_view_sale_advance_payment_inv">
+      <field name="name">Create Invoices</field>
+      <field name="res_model">sale.advance.payment.inv</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="separator">What do you want to invoice?</div>
+          <div class="section">
+            <field name="count" attrs="{'invisible': [('count','=',1)]}" readonly="True"/>
+            <field name="advance_payment_method" attrs="{'invisible': [('count','>',1)]}"/>
+            <field name="product_id" context="{'search_default_services': 1, 'default_type': 'service', 'default_invoice_policy': 'order'}" attrs="{'invisible': true}"/>
+            <div attrs="{'invisible': [('advance_payment_method', 'not in', ('fixed','percentage'))]}" style="display: flex; align-items: center">
+              <field name="amount" attrs="{'required': [('advance_payment_method', 'in', ('fixed','percentage'))]}" style="flex: 1 1 auto; width: 50%;"/>
+              <div style="flex: 0 0 auto; padding-left: 0.5rem">%</div>
+            </div>
+            <field name="deposit_account_id" attrs="{'invisible': ['|', ('advance_payment_method', 'not in', ('fixed', 'percentage')), ('product_id', '!=', False)]}"
+                   groups="account.group_account_manager"/>
+            <field name="deposit_taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','sale')]"
+                   attrs="{'invisible': ['|', ('advance_payment_method', 'not in', ('fixed', 'percentage')), ('product_id', '!=', False)]}"/>
+          </div>
+          <footer>
+            <button type="cancel" string="Cancel"/>
+            <button type="object" name="create_invoices" string="Create Invoices" bgcolor="#23d18b"
+                    attrs="{'invisible': [('advance_payment_method', '=', 'lines')]}"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

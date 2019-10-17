@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_mrp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 16:43+0000\n"
+"PO-Revision-Date: 2019-05-25 00:48+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Basic Information"
+msgstr "基础信息"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Block"
+msgstr "阻塞"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Continue Production"
+msgstr "继续生产"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Done"
+msgstr "完成"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Finish Order"
+msgstr "完成工单"
+
+#. module: appbox_mrp
+#: model:app.menu,name:appbox_mrp.menu_production_root
+msgid "Manufacturing"
+msgstr "生产管理"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Move Lines"
+msgstr "投料明细"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "No Data"
+msgstr "没有数据"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Pause"
+msgstr "暂停"
+
+#. module: appbox_mrp
+#: model:ir.model,name:appbox_mrp.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr ""
+
+#. module: appbox_mrp
+#: model:ir.model.fields,field_description:appbox_mrp.field_stock_move_line__qty_need_scan
+msgid "Reserved"
+msgstr "已保留"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Scrap"
+msgstr "报废"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Start Working"
+msgstr "开始工作"
+
+#. module: appbox_mrp
+#: model_terms:app.view,arch_original:appbox_mrp.app_view_mrp_workorder_form
+msgid "Unblock"
+msgstr "解除阻塞"
+
+#. module: appbox_mrp
+#: model:app.act_window,name:appbox_mrp.act_mrp_workorder
+#: model:app.menu,name:appbox_mrp.menu_mrp_workorder
+#: model:app.view,name:appbox_mrp.app_view_mrp_workorder_form
+#: model:app.view,name:appbox_mrp.app_view_mrp_workorder_kanban
+msgid "Work Order"
+msgstr "生产工单"

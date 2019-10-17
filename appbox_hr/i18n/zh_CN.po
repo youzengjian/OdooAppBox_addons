@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* appbox_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-28 21:35+0000\n"
+"PO-Revision-Date: 2019-05-29 05:36+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Active,Archive"
+msgstr "有效,已存档"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Birth"
+msgstr "生日"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Citizenship &amp; Other Information"
+msgstr "身份和其他信息"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Contact Information"
+msgstr "联系人信息"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_search
+msgid "Employee's Name"
+msgstr "姓名"
+
+#. module: appbox_hr
+#: model:app.act_window,name:appbox_hr.act_employee
+#: model:app.menu,name:appbox_hr.menu_employee
+#: model:app.view,name:appbox_hr.app_view_hr_employee_form
+#: model:app.view,name:appbox_hr.app_view_hr_employee_kanban
+#: model:app.view,name:appbox_hr.app_view_hr_employee_search
+msgid "Employees"
+msgstr "员工"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "HR Setting"
+msgstr "HR设置"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Other Information ..."
+msgstr "其他信息"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Position"
+msgstr "位置"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Private Information"
+msgstr "隐私信息"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Status"
+msgstr "状态"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Work Information"
+msgstr "工作信息"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "Work Permit"
+msgstr "工作许可"
+
+#. module: appbox_hr
+#: model_terms:app.view,arch_original:appbox_hr.app_view_hr_employee_form
+msgid "e.g.Part Time"
+msgstr "例如：部分时间"

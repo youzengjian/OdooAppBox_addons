@@ -1,0 +1,15 @@
+<openerp>
+  <data>
+    <record model="app.act_window" id="appbox_product.act_product_template">
+      <field name="name">Products</field>
+      <field name="res_model">product.template</field>
+      <field name="target">self</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_kanban" ref="appbox_product.app_view_product_template_kanban"/>
+      <field name="view_form" ref="appbox_product.app_view_product_template_form"/>
+      <field name="view_search" ref="appbox_product.app_view_product_template_search"/>
+      <field name="domain">[]</field>
+      <field name="context">{"search_default_filter_to_sell":1}</field>
+    </record>
+  </data>
+</openerp>

@@ -1,0 +1,122 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_sale_management.app_view_sale_order_kanban">
+      <field name="name">Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="type">kanban</field>
+      <field name="arch_original" type="xml">
+        <kanban>
+          <div style="display:flex; flex-wrap: wrap;">
+            <field name="name" style="width:50%; flex: 1 1 auto; font-weight:bold;" class="value-left"/>
+            <field name="state" style="flex: 0 0 auto; font-weight:bold;"/>
+            <field name="partner_id" style="width:50%; flex: 1 1 auto; font-weight:bold;" class="value-left"/>
+            <field name="amount_total" widget="monetary" options="{'currency_field': 'currency_id'}" style="flex: 0 0 auto; font-weight:bold;"/>
+          </div>
+          <field name="order_line" placeholder="No Data">
+            <kanban>
+              <field name="state" attrs="{'invisible': true}"/>
+              <div style="display: flex; flex-flow: row wrap;">
+                <field name="product_id" class="value-left" style="width: 50%; flex: 1 1 auto;"/>
+                <field name="product_uom_qty" style="flex: 0 0 auto;"/>
+                <field name="product_uom" style="flex: 0 0 auto;"/>
+              </div>
+            </kanban>
+          </field>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_sale_management.app_view_sale_order_form">
+      <field name="name">Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="separator">Basic Information</div>
+          <div class="section">
+            <field name="name" attrs="{'readonly': true, 'required': false}"/>
+            <field name="state"/>
+            <field name="invoice_status" attrs="{'invisible': True}"/>
+            <field name="partner_id" domain="[('customer','=',True)]"/>
+            <field name="date_order"/>
+            <field name="pricelist_id" groups="product.group_sale_pricelist" domain="[('type','=','sale')]" options="{'no_open': true, 'no_create': true}"/>
+            <field name="fiscal_position" attrs="{'invisible': true}"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="invoice_count" attrs="{'invisible': True}"/>
+          </div>
+          <div class="separator">Order Lines</div>
+          <div class="section">
+            <field name="order_line" placeholder="No Data">
+              <kanban style="display:flex; flex-flow: wrap; justify-content: space-between;">
+                <field name="state" attrs="{'invisible': true}"/>
+                <field name="product_id" class="value-left" style="flex: 1 1 auto; width: 50%;"/>
+                <field name="product_uom_qty"/>
+                <field name="product_uom"/>
+                <field name="price_subtotal" attrs="{'nolabel': false}" style="width:100%"/>
+              </kanban>
+              <form>
+                <div class="section">
+                  <field name="state" attrs="{'invisible': true}"/>
+                  <field name="product_id" groups="base.group_user"
+                         options="{'no_open': true, 'no_create': true}"
+                         context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"/>
+                  <field name="name"/>
+                  <field name="product_uom_qty"
+                         context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}" />
+                  <field name="product_uom"
+                         context="{'company_id': parent.company_id}"
+                          options="{'no_open': True, 'no_create': True}"/>
+                  <field name="product_uos_qty" groups="product.group_uos"/>
+                  <field name="product_uos" groups="product.group_uos"/>
+                  <field name="price_unit"/>
+                  <field name="tax_id" domain="[('type_tax_use','=','sale')]"
+                                       options="{'no_open': true, 'no_create': true}"/>
+                  <field name="price_subtotal"/>
+                </div>
+              </form>
+            </field>
+          </div>
+          <div class="separator">Amount</div>
+          <div class="section">
+            <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            <field name="amount_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+          </div>
+          <footer>
+            <button type="object" name="action_cancel" string="Cancel" bgcolor="#ff3b2f" attrs="{'invisible': [('state', 'not in', ('draft','sent','sale'))]}" groups="base.group_user"/>
+            <button type="object" name="action_confirm" string="Confrim" bgcolor="#23d18b" attrs="{'invisible': [('state', 'not in', ('draft','sent'))]}" groups="base.group_user"/>
+            <button type="action" name="appbox_sale_management.act_sale_advance_payment_inv" string="Create Invoices" bgcolor="#23d18b"
+                    attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}" groups="base.group_user"/>
+            <button type="action" name="appbox_sale_management.act_sale_advance_payment_inv" string="Create Invoices" bgcolor="#23d18b"
+                    attrs="{'invisible': ['|', ('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}" groups="base.group_user"
+                    context="{'default_advance_payment_method': 'percentage'}"/>
+            <button type="object" name="app_action_view_invoices" string="Invoices" bgcolor="#23d18b" attrs="{'invisible': [('invoice_count', '=', 0)]}" groups="base.group_user"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record model="app.view" id="appbox_sale_management.app_view_sale_order_search">
+      <field name="name">Orders</field>
+      <field name="res_model">sale.order</field>
+      <field name="type">search</field>
+      <field name="arch_original" type="xml">
+        <search>
+          <field name="name" string="Name" domain="['|',('name','ilike',self),('client_order_ref','ilike',self)]"/>
+          <field name="partner_id" string="Partner" domain="[('partner_id','ilike', self)]"/>
+          <field name="user_id" string="Salesperson" domain="[('user_id','ilike', self)]"/>
+          <field name="product_id" string="Product" domain="[('product_id','ilike', self)]"/>
+          <filter_group>
+            <filter string="Mine" domain="[('user_id','=',uid)]" name="my_sale_orders_filter"/>
+          </filter_group>
+          <filter_group>
+            <filter string="Draft" name="draft" domain="[('state','in',('draft','sent'))]"/>
+            <filter string="Sales" name="sales" domain="[('state','in',('manual','progress'))]"/>
+            <filter string="To Invoice" name="to_invoice" domain="[('state','=','manual')]"/>
+            <filter string="Done" name="done" domain="[('state','=','done')]"/>
+          </filter_group>
+        </search>
+      </field>
+    </record>
+  </data>
+</openerp>

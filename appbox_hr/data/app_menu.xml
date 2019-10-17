@@ -1,0 +1,11 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_hr.menu_employee">
+      <field name="name">Employees</field>
+      <field name="sequence">1</field>
+      <field name="parent_id" ref="appbox_base.menu_basic_info_root"/>
+      <field name="action" ref="appbox_hr.act_employee"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

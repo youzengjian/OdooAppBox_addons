@@ -1,0 +1,23 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_stock.app_view_immediate_transfer">
+      <field name="name">stock.immediate.transfer.view.form</field>
+      <field name="res_model">stock.immediate.transfer</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <field name="id" attrs="{'invisible': true}"/>
+          <div class="section" style="display:flex; justify-content: center; align-items: center; min-height: 100px;">
+            <div style="font-weight: bold; font-size: 2rem;">
+              You have not recorded done quantities yet, by clicking on apply. Odoo will process all the reserved quantities.
+            </div>
+          </div>
+          <footer>
+            <button name="process" barcode="BTN_CONFIRM" string="Confirm" type="object" bgcolor="#23d18b"/>
+            <button type="cancel" barcode="BTN_CANCEL" string="Cancel" bgcolor="#ff3b2f"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>

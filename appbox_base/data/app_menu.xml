@@ -1,0 +1,18 @@
+<openerp>
+  <data>
+    <record model="app.menu" id="appbox_base.menu_basic_info_root">
+      <field name="name">Master Data</field>
+      <field name="sequence">0</field>
+      <field name="parent_id"/>
+      <field name="icon">fa-info</field>
+    </record>
+
+    <record model="app.menu" id="appbox_base.menu_res_partner">
+      <field name="name">Contacts</field>
+      <field name="sequence">0</field>
+      <field name="parent_id" ref="appbox_base.menu_basic_info_root"/>
+      <field name="action" ref="appbox_base.act_res_partner"/>
+      <field name="icon"/>
+    </record>
+  </data>
+</openerp>

@@ -1,0 +1,24 @@
+<openerp>
+  <data>
+    <record model="app.view" id="appbox_stock.app_view_overprocessed_transfer">
+      <field name="name">stock.overprocessed.transfer.view.form</field>
+      <field name="res_model">stock.overprocessed.transfer</field>
+      <field name="type">form</field>
+      <field name="arch_original" type="xml">
+        <form>
+          <div class="section" style="display:flex; justify-content: center; align-items: center; min-height: 100px;">
+            <div style="font-weight: bold; font-size: 2rem;">
+              You have processed more than what was initially planned for the product.
+              <field name="overprocessed_product_name" class="value-center" attrs="{'nolabel': true}"/>
+              Are you sure you want to validate this picking?
+            </div>
+          </div>
+          <footer>
+            <button name="action_confirm" barcode="BTN_CONFIRM" string="Confirm" type="object" bgcolor="#23d18b"/>
+            <button type="cancel" barcode="BTN_CANCEL" string="Cancel" bgcolor="#ff3b2f"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</openerp>
