@@ -1,15 +1,9 @@
-# OdooAppBox
-Odoo mobile app backend addons.
+# OdooAppBox Addons
+Backend modules for [OdooAppBox](https://github.com/youzengjian/OdooAppBox)
 
-# Notice
-Branch master only contains appbox core module.
-If your want to install some config module for appbox, you can checkout the branch which name same as your odoo version series. eg: if your odoo version is 12.0 series, you can checkout the branch 12.0.
+# Getting started with OdooAppBox
+### Install module [appbox](https://github.com/youzengjian/OdooAppBox_addons/tree/master/core/appbox) on your Odoo(8.0~12.0)
 
-# Mobile App Download:
-### Android:
-Google Play: https://play.google.com/store/apps/details?id=com.odooappbox
+### Install modules in the directory [demo_for_odoo12](https://github.com/youzengjian/OdooAppBox_addons/tree/master/demo_for_odoo12) on your Odoo
 
-Direct Download: https://d.atknit.com/odooappbox.apk
-
-### iPhone: 
-App Store: https://apps.apple.com/us/app/odooappbox/id1465496744
+### Install [OdooAppBox](https://github.com/youzengjian/OdooAppBox) on your mobile phone then login to your Odoo server
